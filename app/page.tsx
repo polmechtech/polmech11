@@ -24,7 +24,7 @@ export default function Page() {
   ];
 
   const engineeringPoints = [
-    "techniczny upgrade bazowego rozwiązania z Chin",
+    "zaawansowane ulepszenie techniczne sprawdzonego, niezawodnego i popularnego na całym świecie rozwiązania, dostosowane do norm UE",
     "adaptacja konstrukcji przez polskich inżynierów",
     "osłony i rozwiązania konstrukcyjne projektowane z uwzględnieniem wymagań rynku UE",
     "montaż i kompletacja w Polsce",
@@ -159,7 +159,7 @@ export default function Page() {
             </p>
 
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-              Chiński analog jako baza. Polski upgrade jako przewaga.
+              Popularne na całym świecie rozwiązanie jako baza. Polski upgrade jako przewaga.
             </h2>
 
             <p className="mt-5 text-lg leading-relaxed text-neutral-300">
@@ -199,7 +199,7 @@ export default function Page() {
 
             <p className="mt-5 text-lg leading-relaxed text-red-50">
               Pień, rozwidlenie, krzywe polano, nierówny klocek — właśnie przy
-              takim materiale widać sens mocnej, mechanicznej łuparki
+              takim materiale jeszcze bardziej widać sens mocnej, mechanicznej łuparki
               przekładniowej.
             </p>
 
