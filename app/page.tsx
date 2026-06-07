@@ -486,7 +486,5 @@ style={{ backgroundImage: `url(${backgroundImage})` }}
     ☎
   </a>
 </main>
-```
-
-);
+  );
 }
