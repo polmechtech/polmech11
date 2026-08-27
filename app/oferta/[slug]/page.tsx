@@ -1,0 +1,111 @@
+import type { Metadata } from "next";
+import { notFound, permanentRedirect } from "next/navigation";
+import {
+  extractOfferId,
+  getCashOnDeliveryWhatsAppLink,
+  getGearboxOfferById,
+  getOfferPath,
+  getProductDescription,
+} from "@/lib/allegroOffers";
+
+export const revalidate = 3600;
+
+async function getProduct(slug: string) {
+  const id = extractOfferId(slug);
+  if (!id) return null;
+  return getGearboxOfferById(id);
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await getProduct(slug);
+
+  if (!product) {
+    return { title: "Oferta niedostępna", robots: { index: false, follow: true } };
+  }
+
+  const path = getOfferPath(product);
+  const description = getProductDescription(product);
+
+  return {
+    title: product.name,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      url: path,
+      title: product.name,
+      description,
+      images: product.image ? [{ url: product.image, alt: product.name }] : [],
+    },
+  };
+}
+
+export default async function OfferPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = await getProduct(slug);
+  if (!product) notFound();
+
+  const canonicalPath = getOfferPath(product);
+  if (`/oferta/${slug}` !== canonicalPath) permanentRedirect(canonicalPath);
+
+  const description = getProductDescription(product);
+  const codUrl = getCashOnDeliveryWhatsAppLink(product);
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description,
+    image: product.image ? [product.image] : undefined,
+    sku: product.id,
+    brand: { "@type": "Brand", name: "PolMech" },
+    offers: {
+      "@type": "Offer",
+      url: `https://polmech.tech${canonicalPath}`,
+      priceCurrency: product.currency,
+      price: product.price,
+      availability: product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      itemCondition: "https://schema.org/NewCondition",
+      seller: { "@type": "Organization", name: "PolMech" },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "PLN" },
+        shippingDestination: { "@type": "DefinedRegion", addressCountry: "PL" },
+      },
+    },
+  };
+
+  return (
+    <main className="min-h-screen bg-black px-6 py-12 text-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <article className="mx-auto grid max-w-6xl gap-10 overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 p-6 shadow-2xl md:grid-cols-2 md:p-10">
+        <div className="flex min-h-80 items-center justify-center rounded-2xl bg-white p-5">
+          {product.image ? (
+            <img src={product.image} alt={product.name} className="max-h-[560px] max-w-full object-contain" />
+          ) : (
+            <span className="text-neutral-500">Brak zdjęcia</span>
+          )}
+        </div>
+        <div>
+          <a href="/#oferty" className="text-sm font-semibold text-neutral-400 hover:text-white">← Wróć do ofert</a>
+          <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-red-500">PolMech • aktualna oferta</p>
+          <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">{product.name}</h1>
+          <p className="mt-6 text-4xl font-black text-red-500">{product.price} {product.currency}</p>
+          <p className="mt-3 text-neutral-300">{product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź aktualną dostępność"}</p>
+          <div className="mt-8 grid gap-3">
+            <a href={codUrl} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-red-600 px-6 py-4 text-center text-lg font-black transition hover:bg-red-500">Zamów za pobraniem z darmową dostawą</a>
+            <a href={product.url} target="_blank" rel="noopener noreferrer sponsored" className="rounded-2xl border border-white/20 px-6 py-4 text-center font-bold transition hover:bg-white/10">Kup na Allegro</a>
+          </div>
+          <p className="mt-6 text-sm text-neutral-500">Cena i dostępność są pobierane z aktywnej oferty Allegro i odświeżane co godzinę.</p>
+        </div>
+      </article>
+      <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-white/10 bg-neutral-950 p-6 md:p-10">
+        <h2 className="text-2xl font-black">Opis produktu</h2>
+        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">{description}</p>
+        <h2 className="mt-10 text-2xl font-black">Zakup i dostawa</h2>
+        <p className="mt-4 max-w-4xl leading-relaxed text-neutral-300">Produkt można kupić przez Allegro albo zamówić bezpośrednio za pobraniem. Dla zamówień za pobraniem oferujemy darmową dostawę na terenie Polski po wcześniejszym potwierdzeniu dostępności i warunków wysyłki.</p>
+      </section>
+    </main>
+  );
+}
