@@ -18,11 +18,20 @@ const siteUrl = "https://polmech.tech";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Polmech.tech - Łuparki Przekładniowe do Drewna Opałowego",
+    default: "PolMech - Polski Producent Łuparek Przekładniowych do Drewna",
     template: "%s | PolMech",
   },
   description:
-    "Polskie łuparki przekładniowe do drewna opałowego. Wersje 230V i 400V. Drewno sękate, rozwidlenia, pnie i korzenie. Aktualne oferty Allegro, serwis i części zamienne w Polsce.",
+    "PolMech to polski producent łuparek przekładniowych do drewna opałowego. Łuparki reduktorowe bez klasycznej hydrauliki, wersje 230V i 400V, moduły mechaniczne, przekładnie, serwis i części w Polsce.",
+  keywords: [
+    "polski producent łuparek",
+    "producent łuparek przekładniowych",
+    "łuparki przekładniowe",
+    "łuparki reduktorowe",
+    "łuparka do drewna",
+    "łuparka bez hydrauliki",
+    "PolMech",
+  ],
   alternates: { canonical: "/" },
   robots: {
     index: true,
@@ -40,9 +49,9 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     siteName: "PolMech",
     url: siteUrl,
-    title: "Polmech.tech - Łuparki Przekładniowe do Drewna Opałowego",
+    title: "PolMech - Polski Producent Łuparek Przekładniowych",
     description:
-      "Łuparki przekładniowe, przekładnie i mechaniczne rozwiązania do przygotowania drewna opałowego. Aktualne ceny i dostępność.",
+      "Polski producent mechanicznych łuparek przekładniowych i reduktorowych do drewna opałowego. Produkcja, kompletacja, gwarancja, serwis i części w Polsce.",
   },
 };
 
@@ -54,12 +63,23 @@ const siteJsonLd = {
       "@id": `${siteUrl}/#organization`,
       name: "PolMech",
       url: siteUrl,
+      description:
+        "PolMech to polski producent łuparek przekładniowych i reduktorowych do drewna opałowego. Konstrukcje są rozwijane, kompletowane i obsługiwane serwisowo w Polsce.",
+      knowsAbout: [
+        "łuparki przekładniowe",
+        "łuparki reduktorowe",
+        "mechaniczne łuparki do drewna",
+        "przekładnie do łuparek",
+        "przygotowanie drewna opałowego",
+      ],
+      areaServed: { "@type": "Country", name: "Poland" },
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
       name: "PolMech",
+      description: "Oficjalna strona polskiego producenta łuparek przekładniowych PolMech.",
       inLanguage: "pl-PL",
       publisher: { "@id": `${siteUrl}/#organization` },
     },
