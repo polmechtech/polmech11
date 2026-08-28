@@ -13,8 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://polmech.tech";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://polmech.tech"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Polmech.tech - Łuparki Przekładniowe do Drewna Opałowego",
     template: "%s | PolMech",
@@ -37,11 +39,31 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pl_PL",
     siteName: "PolMech",
-    url: "https://polmech.tech",
+    url: siteUrl,
     title: "Polmech.tech - Łuparki Przekładniowe do Drewna Opałowego",
     description:
       "Łuparki przekładniowe, przekładnie i mechaniczne rozwiązania do przygotowania drewna opałowego. Aktualne ceny i dostępność.",
   },
+};
+
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "PolMech",
+      url: siteUrl,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "PolMech",
+      inLanguage: "pl-PL",
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -55,6 +77,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
         {children}
         <AllegroOffersSection />
       </body>
