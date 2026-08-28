@@ -21,7 +21,7 @@ export default async function AllegroOffersSection() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => {
             const description = getProductDescription(product);
-            const localUrl = getOfferPath(product);
+            const localUrl = `https://polmech.tech${getOfferPath(product)}`;
             const codUrl = getCashOnDeliveryWhatsAppLink(product);
 
             return (
