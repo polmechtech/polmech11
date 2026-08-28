@@ -11,7 +11,7 @@ export type AllegroProduct = {
 };
 
 const SOURCE_URL = "https://www.trendeco.eu/api/allegro/offers";
-const TITLE_FILTERS = ["przekładnia", "przekładniowa"];
+const TITLE_FILTERS = ["przekładnia", "przekładniowa", "przekładniowy"];
 
 export function isGearboxOffer(product: Pick<AllegroProduct, "name">) {
   const name = product.name.toLocaleLowerCase("pl-PL");
