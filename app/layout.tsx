@@ -100,13 +100,6 @@ const allegroLinkRewriteScript = `
         node.textContent = "PolMech.Tech";
       }
     });
-    document.querySelectorAll('div.text-3xl.font-black.tracking-tight').forEach((logo) => {
-      const parts = logo.querySelectorAll('span');
-      if (parts.length === 2 && parts[0].textContent?.toLowerCase() === 'polmech' && parts[1].textContent?.toLowerCase() === '.tech') {
-        parts[0].textContent = 'PolMech';
-        parts[1].textContent = '.Tech';
-      }
-    });
   };
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", rewrite, { once: true });
