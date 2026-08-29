@@ -45,7 +45,7 @@ export function getProductDescription(product: AllegroProduct) {
     ? `Produkt dostępny od ręki, aktualny stan: ${product.stock} szt.`
     : "Sprawdź aktualną dostępność produktu.";
 
-  return `${product.name}. Oferta PolMech dla mechanicznych łuparek i podzespołów przekładniowych do przygotowania drewna opałowego. ${stockText} Możliwa wysyłka za pobraniem z darmową dostawą na terenie Polski.`;
+  return `${product.name}. Oferta PolMech.Tech dla mechanicznych łuparek i podzespołów przekładniowych do przygotowania drewna opałowego. ${stockText} Możliwa wysyłka za pobraniem z darmową dostawą na terenie Polski.`;
 }
 
 export async function getGearboxOffers(): Promise<AllegroProduct[]> {
