@@ -80,8 +80,8 @@ style={{ backgroundImage: `url(${backgroundImage})` }}
     <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8">
       <header className="flex items-center justify-between gap-4">
         <div className="text-3xl font-black tracking-tight">
-          <span>polmech</span>
-          <span className="text-red-500">.tech</span>
+          <span>PolMech</span>
+          <span className="text-red-500">.Tech</span>
         </div>
 
         <div className="hidden items-center gap-3 sm:flex">
