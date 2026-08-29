@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "O firmie i kontakt",
   description:
-    "PolMech — polski producent mechanicznych łuparek reduktorowych i przekładniowych do drewna opałowego. Produkcja, kompletacja, gwarancja, serwis i części w Polsce.",
+    "PolMech.Tech — polski producent mechanicznych łuparek reduktorowych i przekładniowych do drewna opałowego. Produkcja, kompletacja, gwarancja, serwis i części w Polsce.",
   alternates: { canonical: "/o-nas" },
 };
 
@@ -12,10 +12,10 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": "https://polmech.tech/#organization",
-    name: "PolMech",
+    name: "PolMech.Tech",
     url: "https://polmech.tech",
     description:
-      "PolMech jest polskim producentem mechanicznych łuparek reduktorowych i przekładniowych do drewna opałowego. Konstrukcje są rozwijane i kompletowane w Polsce, a gwarancja, serwis i części zamienne są obsługiwane w Polsce.",
+      "PolMech.Tech jest polskim producentem mechanicznych łuparek reduktorowych i przekładniowych do drewna opałowego. Konstrukcje są rozwijane i kompletowane w Polsce, a gwarancja, serwis i części zamienne są obsługiwane w Polsce.",
     telephone: "+48512077770",
     email: "info@widia.tech",
     address: {
@@ -35,13 +35,13 @@ export default function AboutPage() {
       />
       <article className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-neutral-950 p-8 shadow-2xl md:p-12">
         <a href="/" className="text-sm font-semibold text-neutral-400">← Strona główna</a>
-        <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-red-500">PolMech</p>
+        <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-red-500">PolMech.Tech</p>
         <h1 className="mt-3 text-4xl font-black">O firmie i kontakt</h1>
         <p className="mt-6 text-lg leading-8 text-neutral-300">
-          PolMech jest polskim producentem mechanicznych łuparek reduktorowych i przekładniowych do drewna opałowego. Specjalizujemy się w konstrukcjach bez klasycznego układu hydraulicznego, opartych na przekładni mechanicznej i napędzie pasowym.
+          PolMech.Tech jest polskim producentem mechanicznych łuparek reduktorowych i przekładniowych do drewna opałowego. Specjalizujemy się w konstrukcjach bez klasycznego układu hydraulicznego, opartych na przekładni mechanicznej i napędzie pasowym.
         </p>
         <p className="mt-4 text-lg leading-8 text-neutral-300">
-          Konstrukcje PolMech są rozwijane i kompletowane w Polsce. Dostępne są wersje 230 V i 400 V, kompletne łuparki, moduły mechaniczne oraz elementy układu napędowego. Zapewniamy polską gwarancję, serwis pogwarancyjny oraz dostęp do części zamiennych.
+          Konstrukcje PolMech.Tech są rozwijane i kompletowane w Polsce. Dostępne są wersje 230 V i 400 V, kompletne łuparki, moduły mechaniczne oraz elementy układu napędowego. Zapewniamy polską gwarancję, serwis pogwarancyjny oraz dostęp do części zamiennych.
         </p>
 
         <h2 className="mt-10 text-2xl font-black">Kontakt</h2>
