@@ -59,11 +59,11 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     description,
     image: product.image ? [product.image] : undefined,
     sku: product.id,
-    brand: { "@type": "Brand", name: "PolMech" },
+    brand: { "@type": "Brand", name: "PolMech.Tech" },
     manufacturer: {
       "@type": "Organization",
       "@id": "https://polmech.tech/#organization",
-      name: "PolMech",
+      name: "PolMech.Tech",
       url: "https://polmech.tech",
     },
     offers: {
@@ -73,7 +73,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
       price: product.price,
       availability: product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       itemCondition: "https://schema.org/NewCondition",
-      seller: { "@type": "Organization", name: "PolMech", url: "https://polmech.tech" },
+      seller: { "@type": "Organization", name: "PolMech.Tech", url: "https://polmech.tech" },
       shippingDetails: {
         "@type": "OfferShippingDetails",
         shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "PLN" },
@@ -118,7 +118,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         </div>
         <div>
           <a href="/#oferty" className="text-sm font-semibold text-neutral-400 hover:text-white">← Wróć do ofert</a>
-          <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-red-500">PolMech • polski producent łuparek przekładniowych</p>
+          <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-red-500">PolMech.Tech • polski producent łuparek przekładniowych</p>
           <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">{product.name}</h1>
           <p className="mt-6 text-4xl font-black text-red-500">{product.price} {product.currency}</p>
           <p className="mt-3 text-neutral-300">{product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź aktualną dostępność"}</p>
@@ -132,7 +132,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
       <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-white/10 bg-neutral-950 p-6 md:p-10">
         <h2 className="text-2xl font-black">Opis produktu</h2>
         <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">{description}</p>
-        <p className="mt-5 max-w-4xl leading-relaxed text-neutral-300">PolMech jest polskim producentem łuparek przekładniowych i reduktorowych do drewna opałowego. Konstrukcje są rozwijane i kompletowane w Polsce, a gwarancja, serwis i części zamienne są obsługiwane w Polsce.</p>
+        <p className="mt-5 max-w-4xl leading-relaxed text-neutral-300">PolMech.Tech jest polskim producentem łuparek przekładniowych i reduktorowych do drewna opałowego. Konstrukcje są rozwijane i kompletowane w Polsce, a gwarancja, serwis i części zamienne są obsługiwane w Polsce.</p>
         <h2 className="mt-10 text-2xl font-black">Zakup i dostawa</h2>
         <p className="mt-4 max-w-4xl leading-relaxed text-neutral-300">Produkt można kupić przez Allegro albo zamówić bezpośrednio za pobraniem. Dla zamówień za pobraniem oferujemy darmową dostawę na terenie Polski po wcześniejszym potwierdzeniu dostępności i warunków wysyłki.</p>
       </section>
