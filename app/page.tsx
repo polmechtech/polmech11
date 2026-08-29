@@ -393,6 +393,12 @@ style={{ backgroundImage: `url(${backgroundImage})` }}
           wariant do rodzaju drewna i intensywności pracy.
         </p>
 
+        <div className="mt-6 flex flex-wrap gap-3 text-sm font-bold">
+          <span className="rounded-full bg-white/10 px-4 py-2">✓ 30 dni na zwrot</span>
+          <span className="rounded-full bg-white/10 px-4 py-2">✓ Darmowa dostawa</span>
+          <span className="rounded-full bg-white/10 px-4 py-2">✓ Płatność przy odbiorze</span>
+        </div>
+
         <div className="mt-8">
           <a
             href={allegroStoreLink}
