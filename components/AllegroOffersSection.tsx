@@ -13,9 +13,6 @@ export default async function AllegroOffersSection() {
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
             Łuparki i przekładnie dostępne od ręki
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-neutral-300">
-            Poniżej pokazujemy aktywne oferty Allegro, których nazwa zawiera słowo „przekładnia” lub „przekładniowa”. Cena i dostępność są odświeżane automatycznie.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
