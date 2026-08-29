@@ -95,6 +95,11 @@ const allegroLinkRewriteScript = `
     document.querySelectorAll('a[href="' + oldUrl + '"]').forEach((link) => {
       link.setAttribute("href", newUrl);
     });
+    document.querySelectorAll("footer span").forEach((node) => {
+      if (node.textContent?.trim() === "polmech.tech") {
+        node.textContent = "PolMech.Tech";
+      }
+    });
   };
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", rewrite, { once: true });
