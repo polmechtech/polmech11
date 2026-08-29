@@ -87,6 +87,24 @@ const siteJsonLd = {
   ],
 };
 
+const allegroLinkRewriteScript = `
+(() => {
+  const oldUrl = "https://allegro.pl/uzytkownik/TRENDECO";
+  const newUrl = "https://allegro.pl/uzytkownik/TrendEco_EU";
+  const rewrite = () => {
+    document.querySelectorAll('a[href="' + oldUrl + '"]').forEach((link) => {
+      link.setAttribute("href", newUrl);
+    });
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", rewrite, { once: true });
+  } else {
+    rewrite();
+  }
+  new MutationObserver(rewrite).observe(document.documentElement, { childList: true, subtree: true });
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -105,6 +123,7 @@ export default function RootLayout({
         {children}
         <AboutCompanyBlock />
         <AllegroOffersSection />
+        <script dangerouslySetInnerHTML={{ __html: allegroLinkRewriteScript }} />
       </body>
     </html>
   );
