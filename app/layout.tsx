@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import AllegroOffersSection from "@/components/AllegroOffersSection";
+import AboutCompanyBlock from "@/components/AboutCompanyBlock";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -102,6 +103,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
         {children}
+        <AboutCompanyBlock />
         <AllegroOffersSection />
       </body>
     </html>
