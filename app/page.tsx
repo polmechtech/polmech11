@@ -60,14 +60,6 @@ text: "Do gospodarstw bez zasilania 400V. Wygodne podłączenie do typowej insta
 title: "Wersja 400V",
 text: "Do intensywniejszej pracy, większych ilości drewna i użytkowników posiadających zasilanie siłowe.",
 },
-{
-title: "Bez kosza",
-text: "Wersja kompaktowa ze stałą osłoną z siatki stalowej zintegrowaną z ramą maszyny.",
-},
-{
-title: "Z koszem roboczym",
-text: "Większa wygoda pracy, łatwiejsze ustawianie krótszych polan i lepsza organizacja stanowiska.",
-},
 ];
 
 return ( <main className="min-h-screen bg-black text-white">
@@ -310,17 +302,16 @@ style={{ backgroundImage: `url(${backgroundImage})` }}
         </p>
 
         <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-          Wybierz zasilanie i wyposażenie do swojego gospodarstwa.
+          Wybierz zasilanie do swojego gospodarstwa.
         </h2>
 
         <p className="mt-5 text-lg leading-relaxed text-neutral-300">
-          Dostępne są warianty zasilania 230V i 400V oraz wersje z koszem
-          roboczym lub bez kosza. Dzięki temu można dobrać maszynę do
+          Dostępne są warianty zasilania 230V i 400V. Dzięki temu można dobrać maszynę do
           warunków pracy i posiadanej instalacji elektrycznej.
         </p>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 md:grid-cols-2">
         {versions.map((item) => (
           <div
             key={item.title}
