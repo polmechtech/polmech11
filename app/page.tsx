@@ -72,8 +72,26 @@ style={{ backgroundImage: `url(${backgroundImage})` }}
     <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8">
       <header className="flex items-center justify-between gap-4">
         <div className="text-3xl font-black tracking-tight">
-          <span>PolMech</span>
-          <span className="text-red-500">.Tech</span>
+          <span>POLMECH</span>
+          <span className="text-red-500">.TECH</span>
+          <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs font-bold tracking-normal text-neutral-300">
+            <a
+              href="https://trendeco.eu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 transition hover:text-white"
+            >
+              TRENDECO.EU
+            </a>
+            <a
+              href="https://widia.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 transition hover:text-white"
+            >
+              WIDIA.TECH
+            </a>
+          </div>
         </div>
 
         <div className="hidden items-center gap-3 sm:flex">
