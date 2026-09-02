@@ -1,4 +1,4 @@
-import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getProductDescription } from "@/lib/allegroOffers";
+import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getProductDescription, getTrendEcoPrice } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
   const products = await getGearboxOffers();
@@ -41,9 +41,13 @@ export default async function AllegroOffersSection() {
                         <p key={index}>{paragraph}</p>
                       ))}
                     </div>
-                    <p className="mt-5 text-3xl font-black text-red-500">
-                      {product.price} {product.currency}
+                    <p className="mt-5 text-sm text-neutral-500 line-through">
+                      Allegro: {product.price} {product.currency}
                     </p>
+                    <p className="mt-1 text-3xl font-black text-red-500">
+                      {getTrendEcoPrice(product)} {product.currency}
+                    </p>
+                    <p className="mt-1 text-sm font-bold text-red-300">Cena PolMech.Tech</p>
                     <p className="mt-2 text-sm text-neutral-300">
                       {product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź dostępność"}
                     </p>

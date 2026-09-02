@@ -69,6 +69,14 @@ export function getDescriptionParagraphs(product: AllegroProduct) {
     .filter(Boolean);
 }
 
+export function getTrendEcoPrice(product: Pick<AllegroProduct, "price">) {
+  const price = Number.parseFloat(String(product.price).replace(",", "."));
+  if (!Number.isFinite(price)) return String(product.price);
+  const discounted = price * 0.95;
+  const roundedDownToNine = Math.floor((discounted + 1) / 10) * 10 - 1;
+  return Math.max(9, roundedDownToNine).toFixed(2);
+}
+
 export async function getGearboxOffers(): Promise<AllegroProduct[]> {
   try {
     const response = await fetch(SOURCE_URL, {
@@ -96,7 +104,7 @@ export function getCashOnDeliveryWhatsAppLink(product: Pick<AllegroProduct, "id"
   const message = [
     "Dzień dobry, chcę zamówić za pobraniem z darmową dostawą:",
     product.name,
-    `Cena: ${product.price} ${product.currency}`,
+    `Cena: ${getTrendEcoPrice(product)} ${product.currency}`,
     `Allegro ID: ${product.id}`,
     "Proszę o potwierdzenie dostępności i danych potrzebnych do wysyłki.",
   ].join("\n");
