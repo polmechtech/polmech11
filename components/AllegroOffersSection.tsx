@@ -1,4 +1,4 @@
-import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getProductDescription } from "@/lib/allegroOffers";
+import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getProductDescription } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
   const products = await getGearboxOffers();
@@ -36,7 +36,11 @@ export default async function AllegroOffersSection() {
                     <a href={localUrl} className="text-xl font-black leading-snug transition hover:text-red-400">
                       {product.name}
                     </a>
-                    <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-neutral-400">{description}</p>
+                    <div className="mt-3 line-clamp-3 space-y-2 text-sm leading-relaxed text-neutral-400">
+                      {getDescriptionParagraphs(product).slice(0, 2).map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                      ))}
+                    </div>
                     <p className="mt-5 text-3xl font-black text-red-500">
                       {product.price} {product.currency}
                     </p>

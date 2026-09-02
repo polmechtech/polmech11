@@ -5,6 +5,7 @@ import {
   getCashOnDeliveryWhatsAppLink,
   getGearboxOfferById,
   getOfferPath,
+  getDescriptionParagraphs,
   getProductDescription,
 } from "@/lib/allegroOffers";
 
@@ -126,12 +127,13 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
             <a href={codUrl} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-red-600 px-6 py-4 text-center text-lg font-black transition hover:bg-red-500">Zamów za pobraniem z darmową dostawą</a>
             <a href={product.url} target="_blank" rel="noopener noreferrer sponsored" className="rounded-2xl border border-white/20 px-6 py-4 text-center font-bold transition hover:bg-white/10">Kup na Allegro</a>
           </div>
-          <p className="mt-6 text-sm text-neutral-500">Cena i dostępność są pobierane z aktywnej oferty Allegro i odświeżane co godzinę.</p>
         </div>
       </article>
       <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-white/10 bg-neutral-950 p-6 md:p-10">
         <h2 className="text-2xl font-black">Opis produktu</h2>
-        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">{description}</p>
+        <div className="mt-5 max-w-4xl space-y-5 text-lg leading-relaxed text-neutral-300">
+          {getDescriptionParagraphs(product).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+        </div>
         <p className="mt-5 max-w-4xl leading-relaxed text-neutral-300">PolMech.Tech jest polskim producentem łuparek przekładniowych i reduktorowych do drewna opałowego. Konstrukcje są rozwijane i kompletowane w Polsce, a gwarancja, serwis i części zamienne są obsługiwane w Polsce.</p>
         <h2 className="mt-10 text-2xl font-black">Zakup i dostawa</h2>
         <p className="mt-4 max-w-4xl leading-relaxed text-neutral-300">Produkt można kupić przez Allegro albo zamówić bezpośrednio za pobraniem. Dla zamówień za pobraniem oferujemy darmową dostawę na terenie Polski po wcześniejszym potwierdzeniu dostępności i warunków wysyłki.</p>

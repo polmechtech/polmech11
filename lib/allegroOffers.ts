@@ -11,11 +11,19 @@ export type AllegroProduct = {
 };
 
 const SOURCE_URL = "https://www.trendeco.eu/api/allegro/offers";
-const TITLE_FILTERS = ["przekładnia", "przekładniowa", "przekładniowy"];
+const POLMECH_KEYWORDS = [
+  "łupar",
+  "łupak",
+  "przekładnia",
+  "przekładniowa",
+  "przekładniowy",
+  "reduktor",
+  "jzq250",
+];
 
 export function isGearboxOffer(product: Pick<AllegroProduct, "name">) {
   const name = product.name.toLocaleLowerCase("pl-PL");
-  return TITLE_FILTERS.some((word) => name.includes(word));
+  return POLMECH_KEYWORDS.some((word) => name.includes(word));
 }
 
 export function slugifyOfferName(name: string) {
@@ -39,13 +47,26 @@ export function extractOfferId(slug: string) {
 }
 
 export function getProductDescription(product: AllegroProduct) {
-  if (product.description?.trim()) return product.description.trim();
+  if (product.description?.trim()) {
+    return product.description
+      .replace(/\r\n?/g, "\n")
+      .replace(/[ \t]+\n/g, "\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  }
 
   const stockText = product.stock > 0
     ? `Produkt dostępny od ręki, aktualny stan: ${product.stock} szt.`
     : "Sprawdź aktualną dostępność produktu.";
 
   return `${product.name}. Oferta PolMech.Tech dla mechanicznych łuparek i podzespołów przekładniowych do przygotowania drewna opałowego. ${stockText} Możliwa wysyłka za pobraniem z darmową dostawą na terenie Polski.`;
+}
+
+export function getDescriptionParagraphs(product: AllegroProduct) {
+  return getProductDescription(product)
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.replace(/\n/g, " ").replace(/\s+/g, " ").trim())
+    .filter(Boolean);
 }
 
 export async function getGearboxOffers(): Promise<AllegroProduct[]> {
