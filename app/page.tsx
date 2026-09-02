@@ -74,7 +74,8 @@ style={{ backgroundImage: `url(${backgroundImage})` }}
         <div className="text-3xl font-black tracking-tight">
           <span>POLMECH</span>
           <span className="text-red-500">.TECH</span>
-          <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs font-bold tracking-normal text-neutral-300">
+          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold tracking-normal text-neutral-300">
+            <span className="text-neutral-400">Nasze marki:</span>
             <a
               href="https://trendeco.eu"
               target="_blank"
