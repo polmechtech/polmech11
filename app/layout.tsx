@@ -10,7 +10,7 @@ const siteUrl = "https://polmech.tech";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "PolMech.Tech - Polski Producent Łuparek Przekładniowych do Drewna", template: "%s | PolMech.Tech" },
+  title: { default: "POLMECH.TECH - POLSKI PRODUCENT ŁUPAREK PRZEKŁADNIOWYCH DO DREWNA", template: "%s | POLMECH.TECH" },
   description: "PolMech.Tech to polski producent łuparek przekładniowych do drewna opałowego. Łuparki reduktorowe bez klasycznej hydrauliki, wersje 230V i 400V, moduły mechaniczne, przekładnie, serwis i części w Polsce.",
   keywords: ["polski producent łuparek", "producent łuparek przekładniowych", "łuparki przekładniowe", "łuparki reduktorowe", "łuparka do drewna", "łuparka bez hydrauliki", "PolMech.Tech"],
   alternates: { canonical: "/" },
