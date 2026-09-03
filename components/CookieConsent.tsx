@@ -27,7 +27,7 @@ export default function CookieConsent() {
       <button
         type="button"
         onClick={() => setSettingsOpen(true)}
-        className="fixed bottom-4 left-4 z-[80] rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-800 shadow-lg transition hover:border-red-500 hover:text-red-600"
+        className="fixed bottom-4 right-24 z-[80] rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-800 shadow-lg transition hover:border-red-500 hover:text-red-600"
       >
         Ustawienia cookies
       </button>
