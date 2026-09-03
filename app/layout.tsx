@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import AllegroOffersSection from "@/components/AllegroOffersSection";
 import AboutCompanyBlock from "@/components/AboutCompanyBlock";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -32,7 +33,7 @@ const allegroLinkRewriteScript = `(() => { const oldUrl = "https://allegro.pl/uz
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="pl" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}><body className="min-h-full flex flex-col">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
-    {children}<AboutCompanyBlock /><AllegroOffersSection />
+    {children}<AboutCompanyBlock /><CookieConsent /><AllegroOffersSection />
     <footer className="border-t border-white/10 bg-black px-6 py-8 text-sm text-neutral-400"><div className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-3"><a href="/o-nas" className="hover:text-white">O firmie i kontakt</a><a href="/dostawa" className="hover:text-white">Dostawa</a><a href="/zwroty-i-reklamacje" className="hover:text-white">Zwroty, reklamacja, gwarancja</a><a href="mailto:info@widia.tech" className="hover:text-white">info@widia.tech</a></div></footer>
     <script dangerouslySetInnerHTML={{ __html: allegroLinkRewriteScript }} />
   </body></html>;
