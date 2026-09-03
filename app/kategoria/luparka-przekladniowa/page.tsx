@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getGearboxOffers, getOfferPath } from "@/lib/allegroOffers";
+import { getGearboxOffers, getOfferPath, getTrendEcoPrice } from "@/lib/allegroOffers";
 
 export const revalidate = 3600;
 
@@ -24,7 +24,7 @@ export default async function CategoryPage() {
           {products.map((product) => (
             <a key={product.id} href={getOfferPath(product)} className="rounded-2xl border border-white/10 bg-neutral-950 p-5 transition hover:border-red-500">
               <h3 className="text-xl font-black">{product.name}</h3>
-              <p className="mt-2 text-neutral-400">Cena PolMech.Tech: {product.price} {product.currency} · Dostępne: {product.stock} szt.</p>
+              <p className="mt-2 text-neutral-400">Cena PolMech.Tech: {getTrendEcoPrice(product)} {product.currency} · Dostępne: {product.stock} szt.</p>
             </a>
           ))}
         </div>
