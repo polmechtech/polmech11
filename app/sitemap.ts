@@ -15,6 +15,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: "https://polmech.tech/kategoria/luparka-przekladniowa",
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.95,
+    },
+    {
+      url: "https://polmech.tech/dostawa",
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://polmech.tech/zwroty-i-reklamacje",
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://polmech.tech/o-nas",
       lastModified: now,
       changeFrequency: "monthly",
