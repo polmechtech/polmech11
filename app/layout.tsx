@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   keywords: ["polski producent łuparek", "producent łuparek przekładniowych", "łuparki przekładniowe", "łuparki reduktorowe", "łuparka do drewna", "łuparka bez hydrauliki", "PolMech.Tech"],
   alternates: { canonical: "/" },
   icons: {
-    icon: [{ url: "/polmech-favicon.svg?v=20260902", type: "image/svg+xml" }],
-    shortcut: "/polmech-favicon.svg?v=20260902",
+    icon: [{ url: "/polmech-favicon.svg?v=20260903", type: "image/svg+xml" }],
+    shortcut: "/polmech-favicon.svg?v=20260903",
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   openGraph: { type: "website", locale: "pl_PL", siteName: "PolMech.Tech", url: siteUrl, title: "PolMech.Tech - Polski Producent Łuparek Przekładniowych", description: "Polski producent mechanicznych łuparek przekładniowych i reduktorowych do drewna opałowego. Produkcja, kompletacja, gwarancja, serwis i części w Polsce." },
