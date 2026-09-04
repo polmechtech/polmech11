@@ -97,6 +97,12 @@ style={{ backgroundImage: `url(${backgroundImage})` }}
 
         <div className="hidden items-center gap-3 sm:flex">
           <a
+            href="/poradnik"
+            className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold transition hover:bg-white/20"
+          >
+            Poradnik
+          </a>
+          <a
             href={youtubeLink}
             target="_blank"
             rel="noopener noreferrer"

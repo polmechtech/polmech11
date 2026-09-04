@@ -1,4 +1,5 @@
 import { getGearboxOffers, getOfferPath } from "@/lib/allegroOffers";
+import { seoGuides } from "@/lib/seoGuides";
 
 export const revalidate = 3600;
 
@@ -16,6 +17,11 @@ export async function GET() {
     "Country: Poland",
     "Canonical website: https://polmech.tech/",
     "Sitemap: https://polmech.tech/sitemap.xml",
+    "RSS feed: https://polmech.tech/feed.xml",
+    "Merchant feed: https://polmech.tech/google-merchant.xml",
+    "",
+    "## Practical guides",
+    ...seoGuides.map((guide) => `- ${guide.title} — https://polmech.tech/poradnik/${guide.slug}`),
     "",
     "## Product pages",
     ...products.map((product) => `- ${product.name} — https://polmech.tech${getOfferPath(product)} — ${product.price} ${product.currency}`),

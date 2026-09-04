@@ -1,0 +1,29 @@
+export type SeoGuide = { slug: string; title: string; description: string; heading: string; sections: { heading: string; text: string }[]; links: { label: string; href: string }[] };
+export const seoGuides: SeoGuide[] = [
+  { slug: "luparka-przekladniowa-czy-hydrauliczna", title: "Łuparka przekładniowa czy hydrauliczna?", description: "Porównanie mechanizmu, szybkości pracy, obsługi i zastosowań.", heading: "Łuparka przekładniowa czy hydrauliczna — różnice", sections: [
+    { heading: "Dwa sposoby napędu", text: "Łuparka hydrauliczna wykorzystuje pompę, olej, zawór i siłownik. Łuparka przekładniowa przekazuje moment przez silnik, pasy i reduktor, dlatego nie ma typowego układu hydraulicznego, przewodów ani siłownika." },
+    { heading: "Tempo i obsługa", text: "Mechanizm przekładniowy zapewnia regularny cykl, przydatny przy seryjnym przygotowaniu drewna. Wymaga kontroli oleju w przekładni, pasów, łożysk i osłon. Hydraulika pracuje inaczej i wymaga obsługi oleju, przewodów oraz uszczelnień." },
+    { heading: "Wybór do pracy", text: "Porównaj średnicę i długość polan, rodzaj drewna, dostępne zasilanie, organizację stanowiska i serwis. Żadna konstrukcja nie zwalnia ze sterowania oburęcznego, osłon i przestrzegania instrukcji." }
+  ], links: [{ label: "Łuparki POLMECH.TECH", href: "/kategoria/luparka-przekladniowa" }, { label: "Kontakt", href: "/o-nas" }] },
+  { slug: "luparka-230v-czy-400v", title: "Łuparka 230 V czy 400 V?", description: "Dobór zasilania do intensywności pracy i instalacji.", heading: "Łuparka do drewna 230 V czy 400 V — praktyczne porównanie", sections: [
+    { heading: "Wersja 230 V", text: "Zasilanie jednofazowe ułatwia użycie w gospodarstwach bez przyłącza siłowego. Należy potwierdzić prąd rozruchowy, zabezpieczenie obwodu, przekrój przewodu i dopuszczalny czas pracy silnika." },
+    { heading: "Wersja 400 V", text: "Silnik trójfazowy jest dobrym wyborem do regularnej pracy pod obciążeniem, jeżeli instalacja i zabezpieczenia są prawidłowe. Zwykle stabilniej utrzymuje parametry podczas seryjnego łupania." },
+    { heading: "Nie tylko napięcie", text: "O wydajności decydują także moc, przełożenie, geometria klina, sposób podawania polana i sprawność całego napędu. Przed zakupem porównaj warunki gwarancji, serwis i dostępność części." }
+  ], links: [{ label: "Aktualne modele", href: "/kategoria/luparka-przekladniowa" }, { label: "Dostawa", href: "/dostawa" }] },
+  { slug: "jak-ustawic-polano-w-luparce", title: "Jak ustawić polano w łuparce?", description: "Pozycja polana, praca z sękami i ograniczanie zakleszczeń.", heading: "Jak prawidłowo ustawić polano w łuparce przekładniowej", sections: [
+    { heading: "Stabilne podparcie", text: "Polano ustaw stabilnie i zgodnie z zakresem wymiarów maszyny. Nie podtrzymuj go ręką w strefie klina i nie wkładaj dłoni między drewno a elementy konstrukcji. Stanowisko powinno być równe i wolne od odpadów." },
+    { heading: "Wejście klina", text: "Przy nieregularnym drewnie korzystne jest skierowanie klina około 2–3 cm od krawędzi polana zamiast dokładnie w środek największego sęka. Zmniejsza to ryzyko zakleszczenia i pozwala stopniowo rozdzielać włókna." },
+    { heading: "Gdy drewno się zatrzyma", text: "Nie poprawiaj polana przy pracującym napędzie. Zatrzymaj maszynę i użyj procedury rewersu opisanej w instrukcji. Nie zwiększaj siły przez obchodzenie zabezpieczeń ani modyfikowanie sterowania." }
+  ], links: [{ label: "Łuparki przekładniowe", href: "/kategoria/luparka-przekladniowa" }, { label: "Bezpieczeństwo", href: "/poradnik/bezpieczenstwo-luparki-do-drewna" }] },
+  { slug: "przekladnia-jzq250-do-luparki", title: "Przekładnia JZQ250 do łuparki", description: "Przełożenie, smarowanie, pasy i kontrola przekładni JZQ250.", heading: "Przekładnia JZQ250 w łuparce — dobór i eksploatacja", sections: [
+    { heading: "Rola przełożenia", text: "Reduktor obniża prędkość obrotową i zwiększa moment dostępny na mechanizmie roboczym. Przełożenie trzeba oceniać razem z prędkością silnika oraz średnicami kół pasowych, ponieważ wszystkie te elementy wyznaczają cykl pracy." },
+    { heading: "Olej i ustawienie", text: "Przed pierwszym uruchomieniem sprawdź poziom i rodzaj oleju zgodnie z instrukcją. Przekładnia powinna pracować w przewidzianej pozycji, a odpowietrzenie nie może być zablokowane. Wyciek lub nadmierna temperatura wymaga zatrzymania urządzenia." },
+    { heading: "Pasy i łożyska", text: "Koła pasowe muszą znajdować się w jednej płaszczyźnie, a napięcie pasów nie może przeciążać łożysk. Regularnie kontroluj mocowanie, hałas, luzy i temperaturę obudowy." }
+  ], links: [{ label: "Przekładnie i moduły", href: "/kategoria/luparka-przekladniowa" }, { label: "Serwis", href: "/o-nas" }] },
+  { slug: "bezpieczenstwo-luparki-do-drewna", title: "Bezpieczeństwo łuparki do drewna", description: "Stanowisko, osłony, sterowanie i procedura awaryjna.", heading: "Bezpieczna praca łuparką przekładniową do drewna", sections: [
+    { heading: "Przed uruchomieniem", text: "Przeczytaj instrukcję, skontroluj osłony, przewody, wyłącznik awaryjny, kierunek obrotów i stabilność maszyny. Usuń ze stanowiska osoby postronne oraz przedmioty, o które operator może się potknąć." },
+    { heading: "Podczas pracy", text: "Używaj wyłącznie przewidzianego sterowania i trzymaj ręce poza strefą klina. Nie próbuj przytrzymywać pękającego drewna. Stosuj ochronę oczu, słuchu, obuwie ochronne i odzież bez luźnych elementów." },
+    { heading: "Zakleszczenie i serwis", text: "Przed usuwaniem drewna zatrzymaj napęd i odłącz zasilanie. Rewers stosuj zgodnie z instrukcją; nie omijaj blokad. Naprawy instalacji elektrycznej oraz napędu powinny wykonywać osoby z odpowiednimi kwalifikacjami." }
+  ], links: [{ label: "Modele POLMECH.TECH", href: "/kategoria/luparka-przekladniowa" }, { label: "Gwarancja", href: "/zwroty-i-reklamacje" }] }
+];
+export const getSeoGuide = (slug: string) => seoGuides.find((guide) => guide.slug === slug);
