@@ -155,7 +155,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
             <p className="mt-1 font-semibold">Ekogratis sp. z o.o.</p>
             <p className="mt-1 text-neutral-300">Jagielska 25/27, 02-886 Warszawa, Polska</p>
             <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
-              <a className="underline" href="mailto:info@widia.tech">info@widia.tech</a>
+              <a className="underline" href="mailto:polmech.tech@gmail.com">polmech.tech@gmail.com</a>
               <a className="underline" href="tel:+48512077770">+48 512 077 770</a>
             </div>
           </div>

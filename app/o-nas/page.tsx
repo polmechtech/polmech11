@@ -17,7 +17,7 @@ export default function AboutPage() {
     description:
       "PolMech.Tech jest polskim producentem mechanicznych łuparek reduktorowych i przekładniowych do drewna opałowego. Konstrukcje są rozwijane i kompletowane w Polsce, a gwarancja, serwis i części zamienne są obsługiwane w Polsce.",
     telephone: "+48512077770",
-    email: "info@widia.tech",
+    email: "polmech.tech@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Jagielska 25/27",
@@ -49,7 +49,7 @@ export default function AboutPage() {
           Ekogratis sp. z o.o.<br />
           Jagielska 25/27, 02-886 Warszawa<br />
           tel. +48 512 077 770<br />
-          e-mail: info@widia.tech
+          e-mail: polmech.tech@gmail.com
         </p>
       </article>
     </main>

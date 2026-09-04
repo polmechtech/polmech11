@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const siteJsonLd = { "@context": "https://schema.org", "@graph": [
-  { "@type": "Organization", "@id": `${siteUrl}/#organization`, name: "POLMECH.TECH", url: siteUrl, email: "info@widia.tech", telephone: "+48512077770", description: "POLMECH.TECH to polski producent łuparek przekładniowych i reduktorowych do drewna opałowego. Konstrukcje są rozwijane, kompletowane i obsługiwane serwisowo w Polsce.", knowsAbout: ["łuparki przekładniowe", "łuparki reduktorowe", "mechaniczne łuparki do drewna", "przekładnie do łuparek", "przygotowanie drewna opałowego"], areaServed: { "@type": "Country", name: "Poland" }, contactPoint: { "@type": "ContactPoint", telephone: "+48512077770", contactType: "sales", areaServed: "PL", availableLanguage: ["pl"] }, sameAs: ["https://www.youtube.com/@PolmechTech", "https://www.tiktok.com/@polmech.tech"] },
+  { "@type": "Organization", "@id": `${siteUrl}/#organization`, name: "POLMECH.TECH", url: siteUrl, email: "polmech.tech@gmail.com", telephone: "+48512077770", description: "POLMECH.TECH to polski producent łuparek przekładniowych i reduktorowych do drewna opałowego. Konstrukcje są rozwijane, kompletowane i obsługiwane serwisowo w Polsce.", knowsAbout: ["łuparki przekładniowe", "łuparki reduktorowe", "mechaniczne łuparki do drewna", "przekładnie do łuparek", "przygotowanie drewna opałowego"], areaServed: { "@type": "Country", name: "Poland" }, contactPoint: { "@type": "ContactPoint", telephone: "+48512077770", contactType: "sales", areaServed: "PL", availableLanguage: ["pl"] }, sameAs: ["https://www.youtube.com/@PolmechTech", "https://www.tiktok.com/@polmech.tech"] },
   { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "POLMECH.TECH", description: "Oficjalna strona polskiego producenta łuparek przekładniowych POLMECH.TECH.", inLanguage: "pl-PL", publisher: { "@id": `${siteUrl}/#organization` } }
 ] };
 
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return <html lang="pl" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}><body className="min-h-full flex flex-col">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
     {children}<AboutCompanyBlock /><CookieConsent /><AllegroOffersSection />
-    <footer className="border-t border-white/10 bg-black px-6 py-8 text-sm text-neutral-400"><div className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-3"><a href="/o-nas" className="hover:text-white">O firmie i kontakt</a><a href="/poradnik" className="hover:text-white">Poradnik</a><a href="/dostawa" className="hover:text-white">Dostawa</a><a href="/zwroty-i-reklamacje" className="hover:text-white">Zwroty, reklamacja, gwarancja</a><a href="mailto:info@widia.tech" className="hover:text-white">info@widia.tech</a></div></footer>
+    <footer className="border-t border-white/10 bg-black px-6 py-8 text-sm text-neutral-400"><div className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-3"><a href="/o-nas" className="hover:text-white">O firmie i kontakt</a><a href="/poradnik" className="hover:text-white">Poradnik</a><a href="/dostawa" className="hover:text-white">Dostawa</a><a href="/zwroty-i-reklamacje" className="hover:text-white">Zwroty, reklamacja, gwarancja</a><a href="mailto:polmech.tech@gmail.com" className="hover:text-white">polmech.tech@gmail.com</a></div></footer>
     <script dangerouslySetInnerHTML={{ __html: allegroLinkRewriteScript }} />
   </body></html>;
 }
