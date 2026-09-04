@@ -1,4 +1,4 @@
-import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getProductDescription, getTrendEcoPrice } from "@/lib/allegroOffers";
+import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
   const products = await getGearboxOffers();
@@ -17,7 +17,6 @@ export default async function AllegroOffersSection() {
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => {
-            const description = getProductDescription(product);
             const localUrl = `https://polmech.tech${getOfferPath(product)}`;
             const codUrl = getCashOnDeliveryWhatsAppLink(product);
 
