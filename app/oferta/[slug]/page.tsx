@@ -7,6 +7,7 @@ import {
   getOfferPath,
   getDescriptionParagraphs,
   getProductDescription,
+  getStructuredDataDescription,
   getTrendEcoPrice,
 } from "@/lib/allegroOffers";
 
@@ -58,7 +59,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    description,
+    description: getStructuredDataDescription(product),
     image: product.image ? [product.image] : undefined,
     sku: product.id,
     brand: { "@type": "Brand", name: "PolMech.Tech" },

@@ -62,6 +62,19 @@ export function getProductDescription(product: AllegroProduct) {
   return `${product.name}. Oferta PolMech.Tech dla mechanicznych łuparek i podzespołów przekładniowych do przygotowania drewna opałowego. ${stockText} Możliwa wysyłka za pobraniem z darmową dostawą na terenie Polski.`;
 }
 
+export function getStructuredDataDescription(product: AllegroProduct) {
+  const description = getProductDescription(product)
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (description.length <= 5000) return description;
+
+  const shortened = description.slice(0, 4999);
+  const lastSpace = shortened.lastIndexOf(" ");
+  return `${shortened.slice(0, lastSpace > 4500 ? lastSpace : 4999).trimEnd()}…`;
+}
+
 export function getDescriptionParagraphs(product: AllegroProduct) {
   return getProductDescription(product)
     .split(/\n{2,}/)
