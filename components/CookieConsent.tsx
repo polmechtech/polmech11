@@ -27,7 +27,7 @@ export default function CookieConsent() {
       <button
         type="button"
         onClick={() => setSettingsOpen(true)}
-        className="fixed bottom-4 right-24 z-[80] rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-800 shadow-lg transition hover:border-red-500 hover:text-red-600"
+        className="fixed bottom-4 right-24 z-[80] rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-bold text-neutral-800 shadow-lg transition hover:border-[#65df68] hover:text-[#277c32]"
       >
         Ustawienia cookies
       </button>
@@ -50,14 +50,14 @@ export default function CookieConsent() {
         <button
           type="button"
           onClick={() => save("rejected")}
-          className="rounded-2xl border border-neutral-300 px-5 py-3 text-sm font-bold transition hover:border-red-500 hover:text-red-600"
+          className="rounded-2xl border border-neutral-300 px-5 py-3 text-sm font-bold transition hover:border-[#65df68] hover:text-[#277c32]"
         >
           Odrzuć analityczne
         </button>
         <button
           type="button"
           onClick={() => save("accepted")}
-          className="rounded-2xl bg-red-600 px-5 py-3 text-sm font-black text-white transition hover:bg-red-500"
+          className="rounded-2xl bg-[#65df68] px-5 py-3 text-sm font-black text-[#07100d] transition hover:bg-[#76e86f]"
         >
           Akceptuję analityczne
         </button>
