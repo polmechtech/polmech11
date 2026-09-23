@@ -34,7 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return <html lang="pl" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}><body className="min-h-full flex flex-col">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
     {children}<AboutCompanyBlock /><CookieConsent /><AllegroOffersSection />
-    <footer className="border-t border-white/10 bg-black px-6 py-8 text-sm text-neutral-400"><div className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-3"><a href="/o-nas" className="hover:text-white">O firmie i kontakt</a><a href="/poradnik" className="hover:text-white">Poradnik</a><a href="/dostawa" className="hover:text-white">Dostawa</a><a href="/zwroty-i-reklamacje" className="hover:text-white">Zwroty, reklamacja, gwarancja</a><a href="mailto:polmech.tech@gmail.com" className="hover:text-white">polmech.tech@gmail.com</a></div></footer>
+    <footer className="border-t border-[#65df68]/15 bg-[#06100d] px-6 py-8 text-sm text-neutral-400"><div className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-3"><a href="/o-nas" className="hover:text-[#76e86f]">O firmie i kontakt</a><a href="/poradnik" className="hover:text-[#76e86f]">Poradnik</a><a href="/dostawa" className="hover:text-[#76e86f]">Dostawa</a><a href="/zwroty-i-reklamacje" className="hover:text-[#76e86f]">Zwroty, reklamacja, gwarancja</a><a href="mailto:polmech.tech@gmail.com" className="hover:text-[#76e86f]">polmech.tech@gmail.com</a></div></footer>
     <script dangerouslySetInnerHTML={{ __html: allegroLinkRewriteScript }} />
   </body></html>;
 }
