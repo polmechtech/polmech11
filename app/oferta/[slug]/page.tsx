@@ -133,7 +133,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
       </article>
-      {product.id === "18788891328" ? (
+      {product.id === "18690919967" ? (
         <section className="mx-auto mt-8 max-w-6xl space-y-6">
           <div className="rounded-[2rem] border border-[#65df68]/15 bg-[#0b1a15] p-6 md:p-10">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#65df68]">POLMECH.TECH • 400 V • 3 kW</p>
