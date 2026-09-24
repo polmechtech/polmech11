@@ -33,11 +33,11 @@ export default function AboutPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black px-6 py-12 text-white">
+    <main className="min-h-screen bg-[#07100d] px-6 py-12 text-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
-      <article className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-neutral-950 p-8 shadow-2xl md:p-12">
+      <article className="mx-auto max-w-4xl rounded-3xl border border-[#65df68]/15 bg-[#07100d] p-8 shadow-2xl md:p-12">
         <a href="/" className="text-sm font-semibold text-neutral-400">← Strona główna</a>
-        <p className="mt-8 text-sm font-bold tracking-[0.2em] text-red-500">POLMECH.TECH</p>
+        <p className="mt-8 text-sm font-bold tracking-[0.2em] text-[#65df68]">POLMECH.TECH</p>
         <h1 className="mt-3 text-4xl font-black">O firmie i kontakt</h1>
         <p className="mt-6 text-lg leading-8 text-neutral-300">POLMECH.TECH jest polską marką i producentem rozwijanym przez Ekogratis sp. z o.o. z Warszawy. <a href="https://trendeco.eu" className="font-bold underline underline-offset-4">TrendEco</a>, POLMECH.TECH i <a href="https://widia.tech" className="font-bold underline underline-offset-4">WIDIA.TECH</a> są powiązanymi markami tej samej polskiej firmy.</p>
         <p className="mt-4 text-lg leading-8 text-neutral-300">POLMECH.TECH specjalizuje się w konstrukcjach bez klasycznego układu hydraulicznego, opartych na przekładni mechanicznej i napędzie pasowym. Konstrukcje są rozwijane i kompletowane w Polsce. Zapewniamy polską gwarancję, serwis pogwarancyjny oraz dostęp do części zamiennych.</p>
