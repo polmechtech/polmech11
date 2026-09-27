@@ -53,7 +53,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
   if (`/oferta/${slug}` !== canonicalPath) permanentRedirect(canonicalPath);
 
   const description = getProductDescription(product);
-  const codUrl = getCashOnDeliveryWhatsAppLink({ ...product, price: getTrendEcoPrice(product) });
+  const codUrl = getCashOnDeliveryWhatsAppLink(product);
 
   const productJsonLd = {
     "@context": "https://schema.org",
