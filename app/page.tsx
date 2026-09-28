@@ -40,7 +40,7 @@ export default function Page() {
                 <div><b className="text-2xl">5–6 m³/h</b><span className="block text-sm text-neutral-300">wg naszych testów</span></div>
               </div>
               <div className="mt-9 flex flex-wrap gap-4">
-                <a href={allegroStoreLink} className="rounded-lg bg-[#68df69] px-7 py-4 font-black text-[#07100d]">Zobacz łuparki →</a>
+                <a href="/kategoria/luparka-przekladniowa" className="rounded-lg bg-[#68df69] px-7 py-4 font-black text-[#07100d]">Zobacz łuparki →</a>
                 <a href={youtubeLink} className="rounded-lg border border-white/40 bg-black/20 px-7 py-4 font-bold">▶ Zobacz jak działa</a>
               </div>
             </div>
