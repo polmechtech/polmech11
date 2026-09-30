@@ -118,7 +118,7 @@ export default async function CategoryPage() {
             {faq.map((x) => <article key={x.q} className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">{x.q}</h3><p className="mt-3 leading-relaxed text-neutral-300">{x.a}</p></article>)}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="/poradnik/luparka-do-drewna-sekatego" className="rounded-lg border border-white/20 px-5 py-3 font-bold">Drewno sękate</a>
+            <a href="/poradnik/luparka-do-pniakow" className="rounded-lg border border-[#65df68]/40 bg-[#65df68]/10 px-5 py-3 font-bold">Pniaki, sęki i rozwidlenia</a>\n            <a href="/poradnik/luparka-do-drewna-sekatego" className="rounded-lg border border-white/20 px-5 py-3 font-bold">Drewno sękate</a>
             <a href="/poradnik/luparka-do-tui-i-rozwidlen" className="rounded-lg border border-white/20 px-5 py-3 font-bold">Tuja i rozwidlenia</a>
             <a href="/poradnik/jak-wybrac-luparke-mechaniczna" className="rounded-lg border border-white/20 px-5 py-3 font-bold">Jak wybrać łuparkę</a>
           </div>
