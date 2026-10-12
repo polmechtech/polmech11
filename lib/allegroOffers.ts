@@ -11,6 +11,7 @@ export type AllegroProduct = {
 };
 
 const SOURCE_URL = "https://trendeco.eu/api/allegro/offers";
+const EXCLUDED_OFFER_IDS = new Set(["18775311531"]);
 const POLMECH_KEYWORDS = [
   "łupar",
   "łupak",
@@ -102,7 +103,7 @@ export async function getGearboxOffers(): Promise<AllegroProduct[]> {
     const data = (await response.json()) as AllegroProduct[];
     if (!Array.isArray(data)) return [];
 
-    return data.filter((product) => isGearboxOffer(product) && product.stock > 0);
+    return data.filter((product) => !EXCLUDED_OFFER_IDS.has(product.id) && isGearboxOffer(product) && product.stock > 0);
   } catch {
     return [];
   }
