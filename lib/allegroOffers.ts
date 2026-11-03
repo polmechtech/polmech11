@@ -31,6 +31,22 @@ export function isGearboxOffer(product: Pick<AllegroProduct, "name" | "id">) {
   return POLMECH_KEYWORDS.some((word) => name.includes(word));
 }
 
+
+/** Sentence case for product titles, preserving brand names and technical designations. */
+export function getDisplayProductName(name: string) {
+  const normalized = name.toLocaleLowerCase("pl-PL")
+    .replace(/\bpolmech\.tech\b/gi, "POLMECH.TECH")
+    .replace(/\bwidia\.tech\b/gi, "WIDIA.TECH")
+    .replace(/\bjzq\s*250\b/gi, "JZQ250")
+    .replace(/\bpromotor\b/gi, "PROMOTOR")
+    .replace(/\b(\d+)\s*kw\b/gi, "$1 kW")
+    .replace(/\b(\d+)\s*v\b/gi, "$1 V")
+    .replace(/\bip(\d+)\b/gi, "IP$1")
+    .replace(/\bac-(\d+)\b/gi, "AC-$1");
+  return normalized.replace(/^([^\p{L}]*)(\p{L})/u, (_, prefix: string, first: string) =>
+    prefix + first.toLocaleUpperCase("pl-PL"));
+}
+
 export function slugifyOfferName(name: string) {
   return name
     .toLowerCase()
