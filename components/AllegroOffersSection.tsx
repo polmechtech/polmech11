@@ -1,5 +1,5 @@
 import BrandText, { BrandName } from "@/components/BrandText";
-import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice } from "@/lib/allegroOffers";
+import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getAllegroDescriptionImages, getTrendEcoPrice } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
   const products = await getGearboxOffers();
@@ -20,6 +20,7 @@ export default async function AllegroOffersSection() {
           {products.map((product) => {
             const localUrl = `https://polmech.tech${getOfferPath(product)}`;
             const codUrl = getCashOnDeliveryWhatsAppLink(product);
+            const descriptionImages = getAllegroDescriptionImages(product);
 
             return (
               <article key={product.id} className="flex overflow-hidden rounded-3xl border border-[#65df68]/15 bg-[#0b1a15] shadow-2xl shadow-black/30">
@@ -46,6 +47,15 @@ export default async function AllegroOffersSection() {
                       <div className="mt-3 line-clamp-3 space-y-2 text-sm leading-relaxed text-neutral-400">
                         {getDescriptionParagraphs(product).slice(0, 2).map((paragraph, index) => (
                           <p key={index}><BrandText text={paragraph} /></p>
+                        ))}
+                      </div>
+                    )}
+                    {descriptionImages.length > 0 && (
+                      <div className="mt-4 grid grid-cols-2 gap-2" aria-label="Zdjęcia z opisu oferty Allegro">
+                        {descriptionImages.map((url, index) => (
+                          <a key={url} href={localUrl} className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl bg-white p-2">
+                            <img src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                          </a>
                         ))}
                       </div>
                     )}
