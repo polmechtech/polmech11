@@ -96,6 +96,22 @@ export function getAllegroDescriptionImages(product: AllegroProduct): string[] {
   return [...new Set(urls)].slice(0, 4);
 }
 
+export const JZQ250_DIMENSIONS_MM = [
+  ["L", 500], ["A", 250], ["B", 220], ["a2", 150], ["a1", 105],
+  ["L2", 75], ["H", 295], ["b1", 8], ["t1", 15], ["d2", 32],
+  ["d1", 30], ["L1", 17], ["l2", 55], ["B1", 92], ["L3", 54],
+  ["L4", 130], ["B2", 184], ["b2", 18], ["t2", 62], ["d3", 55],
+] as const;
+
+export function getVisibleDescriptionParagraphs(product: AllegroProduct) {
+  const paragraphs = getDescriptionParagraphs(product);
+  if (product.id !== "18878600668") return paragraphs;
+  return paragraphs.filter((paragraph) => {
+    const labels = paragraph.match(/(?:^|[\s,;])(?:L2?|l2|a[12]|b[12]|B[12]|t[12]|d[123]|H|A|B)\s*[:=]\s*\d+/g) ?? [];
+    return labels.length < 3 && !(/(?:wymiary|rozmiary)\s*[,:(]?\s*(?:mm)?/i.test(paragraph) && labels.length > 0);
+  });
+}
+
 export function getTrendEcoPrice(product: Pick<AllegroProduct, "price">) {
   const price = Number.parseFloat(String(product.price).replace(",", "."));
   if (!Number.isFinite(price)) return String(product.price);
