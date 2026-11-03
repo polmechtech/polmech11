@@ -160,6 +160,23 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           <div className="mt-5 max-w-4xl space-y-5 text-lg leading-relaxed text-neutral-300">{getDescriptionParagraphs(product).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
         </section>
       )}
+      {product.id === "19044041381" && (
+        <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-amber-400/35 bg-[#191910] p-6 md:p-10">
+          <p className="text-sm font-black uppercase tracking-widest text-amber-300">Dla samodzielnych konstruktorów</p>
+          <h2 className="mt-3 text-3xl font-black">Tanie, proste sterowanie 400 V — nie pełna szafa sterownicza łuparki</h2>
+          <p className="mt-4 leading-8 text-neutral-200">Wyłącznik elektromagnetyczny z funkcją lewo / zero / prawo oraz START/STOP może być ekonomiczną alternatywą w samodzielnie budowanych urządzeniach, np. przy zakupie osobnego reduktora JZQ250 lub modułu mechanicznego. Pozwala uprościć projekt sterowania napędem, jeśli jego parametry są odpowiednie dla zastosowanego silnika.</p>
+          <p className="mt-4 font-bold leading-8 text-amber-200">Uwaga: nie jest to pełnowartościowy zamiennik fabrycznego panelu sterowania gotowej łuparki POLMECH.TECH. Nie zapewnia sam z siebie wszystkich funkcji bezpieczeństwa maszyny, w tym dedykowanego zatrzymania awaryjnego i kontrolowanego cofania klina.</p>
+          <p className="mt-4 leading-8 text-neutral-300">Przed użyciem trzeba zweryfikować prąd znamionowy silnika i kategorię pracy styków (w opisie wyłącznika AC-3: 12 A, Ith: 16 A), zabezpieczenia nadprądowe i przeciążeniowe, ryzyko nieoczekiwanego ruchu oraz zgodność całej instalacji. Projekt i podłączenie należy powierzyć osobie o odpowiednich kwalifikacjach. Kierunek obrotów zmieniaj wyłącznie po całkowitym zatrzymaniu napędu.</p>
+        </section>
+      )}
+      {(product.id === "18690927460" || product.id === "18878600668") && (
+        <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-[#65df68]/25 bg-[#0b1a15] p-6 md:p-10">
+          <h2 className="text-3xl font-black">Dobierz silnik i sterowanie do własnego projektu</h2>
+          <p className="mt-4 leading-8 text-neutral-300">Kupując sam moduł mechaniczny lub reduktor JZQ250, możesz zapytać nas również o silnik trójfazowy 3 kW albo 4 kW / 400 V. Silniki sprzedajemy po indywidualnym potwierdzeniu dostępności i ceny przed zakupem.</p>
+          <p className="mt-4 leading-8 text-neutral-300">Do projektów własnych oferujemy także <a className="font-bold text-[#65df68] underline" href="https://trendeco.eu/oferta/wylacznik-elektromagnetyczny-400v-lewe-prawe-obroty-19044041381">ekonomiczny wyłącznik elektromagnetyczny 400 V z rewersem</a>. To prostsza opcja sterowania, a nie odpowiednik rozbudowanego panelu z zabezpieczeniami stosowanego w gotowej łuparce POLMECH.TECH. Wymaga oceny kompatybilności oraz projektu zabezpieczeń całej maszyny.</p>
+          <a className="mt-5 inline-flex rounded-xl bg-[#65df68] px-5 py-3 font-black text-[#07100d]" target="_blank" rel="noopener noreferrer" href="https://wa.me/48512077770?text=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20dost%C4%99pno%C5%9B%C4%87%20i%20cen%C4%99%20silnika%203%20lub%204%20kW%20400%20V%20do%20modu%C5%82u%20lub%20reduktora%20JZQ250.">Zapytaj o silnik 3 / 4 kW</a>
+        </section>
+      )}
       <section id="gpsr" className="mx-auto mt-8 max-w-6xl rounded-3xl border border-[#65df68]/15 bg-[#0b1a15] p-6 md:p-10">
         <h2 className="text-2xl font-black">Informacje o produkcie i bezpieczeństwie (GPSR)</h2>
         <p className="mt-2 text-sm text-neutral-500">Dane producenta i podmiotu odpowiedzialnego na terenie Unii Europejskiej.</p>
