@@ -1,3 +1,4 @@
+import HoverZoomImage from "@/components/HoverZoomImage";
 import BrandText, { BrandName } from "@/components/BrandText";
 import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getAllegroDescriptionImages, getTrendEcoPrice } from "@/lib/allegroOffers";
 
@@ -27,7 +28,7 @@ export default async function AllegroOffersSection() {
                 <div className="flex w-full flex-col">
                   <a href={localUrl} className="flex min-h-64 items-center justify-center bg-white p-4">
                     {product.image ? (
-                      <img src={product.image} alt={product.name} loading="lazy" className="max-h-64 w-full object-contain" />
+                      <HoverZoomImage src={product.image} alt={product.name} imageClassName="max-h-64 w-full object-contain" />
                     ) : (
                       <span className="text-neutral-500">Brak zdjęcia</span>
                     )}
@@ -54,7 +55,7 @@ export default async function AllegroOffersSection() {
                       <div className="mt-4 grid grid-cols-2 gap-2" aria-label="Zdjęcia z opisu oferty Allegro">
                         {descriptionImages.map((url, index) => (
                           <a key={url} href={localUrl} className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl bg-white p-2">
-                            <img src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                            <HoverZoomImage src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} />
                           </a>
                         ))}
                       </div>
