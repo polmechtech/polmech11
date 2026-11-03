@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "POLMECH.TECH - POLSKI PRODUCENT ŁUPAREK PRZEKŁADNIOWYCH DO DREWNA", template: "%s | POLMECH.TECH" },
   description: "POLMECH.TECH to polski producent mechanicznych łuparek przekładniowych do drewna opałowego. Łuparki bez klasycznej hydrauliki z napędem trójfazowym 400 V, moduły mechaniczne, przekładnie, serwis i części w Polsce.",
-  keywords: ["polski producent łuparek", "producent łuparek przekładniowych", "łuparki przekładniowe", "łuparki reduktorowe", "łuparka do drewna", "łuparka bez hydrauliki", "PolMech.Tech"],
+  keywords: ["polski producent łuparek", "producent łuparek przekładniowych", "łuparki przekładniowe", "łuparki reduktorowe", "łuparka do drewna", "łuparka bez hydrauliki", "POLMECH.TECH"],
   alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },
   icons: {
     icon: [{ url: "/polmech-favicon.svg?v=20260903", type: "image/svg+xml" }],
@@ -28,7 +28,7 @@ const siteJsonLd = { "@context": "https://schema.org", "@graph": [
   { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "POLMECH.TECH", description: "Oficjalna strona polskiego producenta łuparek przekładniowych POLMECH.TECH. Produkty można kupować bezpośrednio na stronie, jeśli dana karta produktu udostępnia opcję zakupu.", inLanguage: "pl-PL", publisher: { "@id": `${siteUrl}/#organization` } }
 ] };
 
-const allegroLinkRewriteScript = `(() => { const oldUrl = "https://allegro.pl/uzytkownik/TRENDECO"; const newUrl = "https://allegro.pl/uzytkownik/TrendEco_EU"; const rewrite = () => { document.querySelectorAll('a[href="' + oldUrl + '"]').forEach((link) => link.setAttribute("href", newUrl)); document.querySelectorAll("footer span").forEach((node) => { if (node.textContent?.trim() === "polmech.tech") node.textContent = "PolMech.Tech"; }); }; if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", rewrite, { once: true }); else rewrite(); new MutationObserver(rewrite).observe(document.documentElement, { childList: true, subtree: true }); })();`;
+const allegroLinkRewriteScript = `(() => { const oldUrl = "https://allegro.pl/uzytkownik/TRENDECO"; const newUrl = "https://allegro.pl/uzytkownik/TrendEco_EU"; const rewrite = () => { document.querySelectorAll('a[href="' + oldUrl + '"]').forEach((link) => link.setAttribute("href", newUrl)); document.querySelectorAll("footer span").forEach((node) => { if (node.textContent?.trim() === "polmech.tech") node.textContent = "POLMECH.TECH"; }); }; if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", rewrite, { once: true }); else rewrite(); new MutationObserver(rewrite).observe(document.documentElement, { childList: true, subtree: true }); })();`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="pl" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}><body className="min-h-full flex flex-col">
