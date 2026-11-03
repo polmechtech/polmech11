@@ -12,6 +12,7 @@ export type AllegroProduct = {
 
 const SOURCE_URL = "https://trendeco.eu/api/allegro/offers";
 const EXCLUDED_OFFER_IDS = new Set(["18775311531"]);
+const ADDITIONAL_POLMECH_OFFER_IDS = new Set(["19044041381"]);
 const POLMECH_KEYWORDS = [
   "łupar",
   "łupak",
@@ -22,7 +23,8 @@ const POLMECH_KEYWORDS = [
   "jzq250",
 ];
 
-export function isGearboxOffer(product: Pick<AllegroProduct, "name">) {
+export function isGearboxOffer(product: Pick<AllegroProduct, "name" | "id">) {
+  if (ADDITIONAL_POLMECH_OFFER_IDS.has(product.id)) return true;
   const name = product.name.toLocaleLowerCase("pl-PL");
   return POLMECH_KEYWORDS.some((word) => name.includes(word));
 }
