@@ -7,6 +7,8 @@ import {
   getGearboxOfferById,
   getOfferPath,
   getDescriptionParagraphs,
+  getVisibleDescriptionParagraphs,
+  JZQ250_DIMENSIONS_MM,
   getAllegroDescriptionImages,
   getProductDescription,
   getStructuredDataDescription,
@@ -171,7 +173,22 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
       ) : (
         <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-[#65df68]/15 bg-[#0b1a15] p-6 md:p-10">
           <h2 className="text-2xl font-black">Opis produktu</h2>
-          <div className="mt-5 max-w-4xl space-y-5 text-lg leading-relaxed text-neutral-300">{getDescriptionParagraphs(product).map((paragraph, index) => <p key={index}><BrandText text={paragraph} /></p>)}</div>
+          <div className="mt-5 max-w-4xl space-y-5 text-lg leading-relaxed text-neutral-300">{getVisibleDescriptionParagraphs(product).map((paragraph, index) => <p key={index}><BrandText text={paragraph} /></p>)}</div>
+          {product.id === "18878600668" && (
+            <div className="mt-8 rounded-2xl border border-[#65df68]/25 bg-black/20 p-5">
+              <h3 className="text-2xl font-black">Rozmiary reduktora JZQ250 (mm)</h3>
+              <p className="mt-2 text-sm text-neutral-400">Oznaczenia L2 i l2 są różne — wielkość litery ma znaczenie.</p>
+              <dl className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {JZQ250_DIMENSIONS_MM.map(([label, value]) => (
+                  <div key={label} className="rounded-lg border border-white/10 bg-[#10221b] px-3 py-2">
+                    <dt className="text-xs font-bold text-[#9aee96]">{label}</dt>
+                    <dd className="text-lg font-black text-white">{value} mm</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
+
         </section>
       )}
       {product.id === "19044041381" && (
