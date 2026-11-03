@@ -35,11 +35,19 @@ export default async function AllegroOffersSection() {
                     <a href={localUrl} className="text-xl font-black leading-snug transition hover:text-[#76e86f]">
                       {product.name}
                     </a>
-                    <div className="mt-3 line-clamp-3 space-y-2 text-sm leading-relaxed text-neutral-400">
-                      {getDescriptionParagraphs(product).slice(0, 2).map((paragraph, index) => (
-                        <p key={index}>{paragraph}</p>
-                      ))}
-                    </div>
+                    {product.id === "19044041381" ? (
+                      <div className="mt-3 space-y-2 text-sm leading-relaxed text-neutral-300">
+                        <p>Ekonomiczna alternatywa sterowania START/STOP i lewo/prawo dla własnych projektów z silnikiem trójfazowym 400 V, np. przy osobnym zakupie reduktora JZQ250 albo modułu łuparki.</p>
+                        <p className="font-bold text-amber-300">To nie jest pełny zamiennik rozbudowanego układu sterowania i zabezpieczeń gotowej łuparki POLMECH.TECH.</p>
+                        <p>Dobór zabezpieczeń, dopuszczalnego prądu silnika i montaż wymaga weryfikacji przez osobę z odpowiednimi kwalifikacjami.</p>
+                      </div>
+                    ) : (
+                      <div className="mt-3 line-clamp-3 space-y-2 text-sm leading-relaxed text-neutral-400">
+                        {getDescriptionParagraphs(product).slice(0, 2).map((paragraph, index) => (
+                          <p key={index}>{paragraph}</p>
+                        ))}
+                      </div>
+                    )}
                     <p className="mt-5 text-sm text-neutral-500 line-through">
                       Allegro: {product.price} {product.currency}
                     </p>
@@ -77,6 +85,11 @@ export default async function AllegroOffersSection() {
               </article>
             );
           })}
+        <div className="mt-10 rounded-3xl border border-[#65df68]/25 bg-[#0b1a15] p-6 md:p-8">
+          <h3 className="text-2xl font-black">Budujesz własną łuparkę? Zapytaj także o silnik 400 V</h3>
+          <p className="mt-3 leading-7 text-neutral-300">Przy zakupie samego modułu mechanicznego albo przekładni JZQ250 możesz dokupić u nas silnik trójfazowy 3 kW lub 4 kW / 400 V. Dostępność i cenę silnika potwierdzamy indywidualnie przed zakupem. Dobór mocy, napędu i zabezpieczeń zależy od projektu maszyny.</p>
+          <a href="https://wa.me/48512077770?text=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20informacj%C4%99%20o%20dost%C4%99pno%C5%9Bci%20i%20cenie%20silnika%203%20kW%20lub%204%20kW%20400%20V%20do%20modu%C5%82u%20lub%20przek%C5%82adni%20JZQ250." target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-xl bg-[#65df68] px-5 py-3 font-black text-[#07100d]">Zapytaj o silnik 3 / 4 kW na WhatsApp</a>
+        </div>
         </div>
       </div>
     </section>
