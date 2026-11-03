@@ -62,11 +62,11 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     description: getStructuredDataDescription(product),
     image: product.image ? [product.image] : undefined,
     sku: product.id,
-    brand: { "@type": "Brand", name: "PolMech.Tech" },
+    brand: { "@type": "Brand", name: "POLMECH.TECH" },
     manufacturer: {
       "@type": "Organization",
       "@id": "https://polmech.tech/#organization",
-      name: "PolMech.Tech",
+      name: "POLMECH.TECH",
       url: "https://polmech.tech",
     },
     offers: {
@@ -76,7 +76,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
       price: getTrendEcoPrice(product),
       availability: product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       itemCondition: "https://schema.org/NewCondition",
-      seller: { "@type": "Organization", name: "PolMech.Tech", url: "https://polmech.tech" },
+      seller: { "@type": "Organization", name: "POLMECH.TECH", url: "https://polmech.tech" },
       shippingDetails: {
         "@type": "OfferShippingDetails",
         shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "PLN" },
@@ -121,11 +121,11 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         </div>
         <div>
           <a href="/#oferty" className="text-sm font-semibold text-neutral-400 hover:text-white">← Wróć do ofert</a>
-          <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]">PolMech.Tech • polski producent łuparek przekładniowych</p>
+          <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]">POLMECH.TECH • polski producent łuparek przekładniowych</p>
           <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">{product.name}</h1>
           <p className="mt-6 text-sm text-neutral-500 line-through">Allegro: {product.price} {product.currency}</p>
           <p className="mt-1 text-4xl font-black text-[#65df68]">{getTrendEcoPrice(product)} {product.currency}</p>
-          <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena PolMech.Tech</p>
+          <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena POLMECH.TECH</p>
           <p className="mt-3 text-neutral-300">{product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź aktualną dostępność"}</p>
           <div className="mt-8 grid gap-3">
             <a href={codUrl} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-[#65df68] text-[#07100d] px-6 py-4 text-center text-lg font-black transition hover:bg-[#76e86f]">Zamów za pobraniem z darmową dostawą</a>
