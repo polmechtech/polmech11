@@ -88,7 +88,7 @@ export default async function AllegroOffersSection() {
         </div>
         <div className="mt-10 rounded-3xl border border-[#65df68]/25 bg-[#0b1a15] p-6 md:p-8">
           <h3 className="text-2xl font-black">Budujesz własną łuparkę? Zapytaj także o silnik 400 V</h3>
-          <p className="mt-3 leading-7 text-neutral-300">Przy zakupie samego modułu mechanicznego albo przekładni JZQ250 możesz dokupić u nas silnik trójfazowy 3 kW lub 4 kW / 400 V. Dostępność i cenę silnika potwierdzamy indywidualnie przed zakupem. Do tego układu rekomendujemy silnik do 4 kW: mocniejszy napęd nie zwiększy tempa klina przy tym samym przełożeniu, a przy twardym, nagłym zakleszczeniu może zwiększyć obciążenie zębów reduktora. Dobór mocy, napędu i zabezpieczeń zależy od projektu maszyny.</p>
+          <p className="mt-3 leading-7 text-neutral-300">Przy zakupie samego modułu mechanicznego albo przekładni JZQ250 możesz dokupić u nas silnik trójfazowy 3 kW lub 4 kW / 400 V. Dostępność i cenę silnika potwierdzamy indywidualnie przed zakupem. Do tego układu rekomendujemy silnik do 4 kW: większa moc nie gwarantuje istotnego wzrostu skuteczności rozłupywania, za to przy gwałtownym zakleszczeniu może zwiększyć obciążenie zębów reduktora. Dobór mocy, napędu i zabezpieczeń zależy od projektu maszyny.</p>
           <a href="https://wa.me/48512077770?text=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20informacj%C4%99%20o%20dost%C4%99pno%C5%9Bci%20i%20cenie%20silnika%203%20kW%20lub%204%20kW%20400%20V%20do%20modu%C5%82u%20lub%20przek%C5%82adni%20JZQ250." target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex rounded-xl bg-[#65df68] px-5 py-3 font-black text-[#07100d]">Zapytaj o silnik 3 / 4 kW na WhatsApp</a>
         </div>
       </div>
