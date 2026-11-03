@@ -7,6 +7,7 @@ import {
   getGearboxOfferById,
   getOfferPath,
   getDescriptionParagraphs,
+  getAllegroDescriptionImages,
   getProductDescription,
   getStructuredDataDescription,
   getTrendEcoPrice,
@@ -55,6 +56,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
 
   const description = getProductDescription(product);
   const codUrl = getCashOnDeliveryWhatsAppLink(product);
+  const descriptionImages = getAllegroDescriptionImages(product);
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -113,11 +115,22 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
     <main className="min-h-screen bg-[#07100d] px-4 py-10 text-white sm:px-6 sm:py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
       <article className="mx-auto grid max-w-6xl gap-10 overflow-hidden rounded-[2rem] border border-[#65df68]/15 bg-[#0b1a15] p-6 shadow-2xl shadow-black/30 md:grid-cols-2 md:p-10">
-        <div className="flex min-h-80 items-center justify-center rounded-2xl bg-white p-5">
-          {product.image ? (
-            <img src={product.image} alt={product.name} className="max-h-[560px] max-w-full object-contain" />
-          ) : (
-            <span className="text-neutral-500">Brak zdjęcia</span>
+        <div>
+          <div className="flex min-h-80 items-center justify-center rounded-2xl bg-white p-5">
+            {product.image ? (
+              <img src={product.image} alt={product.name} className="max-h-[560px] max-w-full object-contain" />
+            ) : (
+              <span className="text-neutral-500">Brak zdjęcia</span>
+            )}
+          </div>
+          {descriptionImages.length > 0 && (
+            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3" aria-label="Dodatkowe zdjęcia z opisu Allegro">
+              {descriptionImages.map((url, index) => (
+                <div key={url} className="flex aspect-[4/3] items-center justify-center rounded-xl bg-white p-2">
+                  <img src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                </div>
+              ))}
+            </div>
           )}
         </div>
         <div>
