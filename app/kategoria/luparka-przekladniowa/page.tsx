@@ -1,3 +1,4 @@
+import BrandText, { BrandName } from "@/components/BrandText";
 import type { Metadata } from "next";
 import { getGearboxOffers, getOfferPath, getTrendEcoPrice } from "@/lib/allegroOffers";
 
@@ -53,11 +54,11 @@ export default async function CategoryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="border-b border-white/10 px-6 py-16">
         <div className="mx-auto max-w-6xl">
-          <a href="/" className="text-sm font-bold text-[#65df68]">← POLMECH.TECH</a>
+          <a href="/" className="text-sm font-bold text-[#65df68]">← <BrandName /></a>
           <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]">400 V • 3 kW • 2 kliny • napęd przekładniowy</p>
           <h1 className="mt-3 max-w-5xl text-4xl font-black leading-tight sm:text-6xl">Łuparka przekładniowa do drewna — do sęków, rozwidleń i trudnych polan</h1>
           <p className="mt-6 max-w-4xl text-lg leading-relaxed text-neutral-300">
-            Mechaniczna łuparka do drewna POLMECH.TECH wykorzystuje wolnoobrotowy napęd przekładniowy zamiast klasycznej pompy i siłownika hydraulicznego. Aktualna kompletna wersja pracuje z silnikiem PROMOTOR 3 kW / 400 V i dwoma przeciwległymi klinami.
+            Mechaniczna łuparka do drewna <BrandName /> wykorzystuje wolnoobrotowy napęd przekładniowy zamiast klasycznej pompy i siłownika hydraulicznego. Aktualna kompletna wersja pracuje z silnikiem PROMOTOR 3 kW / 400 V i dwoma przeciwległymi klinami.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             {["drewno sękate", "rozwidlenia", "tuja", "Ø do 40 cm", "długość do 50 cm", "5–6 m³/h"].map((x) => <span key={x} className="rounded-full border border-[#65df68]/25 bg-[#65df68]/10 px-4 py-2 font-semibold">{x}</span>)}
@@ -69,24 +70,24 @@ export default async function CategoryPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-black sm:text-4xl">Dlaczego łuparka przekładniowa?</h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">
-            Przy prostych polanach wybór maszyny jest szeroki. Konstrukcja POLMECH.TECH jest kierowana do użytkowników, którzy regularnie trafiają na drewno nieregularne, sękate i rozwidlone. Mechaniczny układ wykonuje powtarzalny cykl bez klasycznego układu hydraulicznego.
+            Przy prostych polanach wybór maszyny jest szeroki. Konstrukcja <BrandName /> jest kierowana do użytkowników, którzy regularnie trafiają na drewno nieregularne, sękate i rozwidlone. Mechaniczny układ wykonuje powtarzalny cykl bez klasycznego układu hydraulicznego.
           </p>
           <div className="mt-9 grid gap-5 md:grid-cols-3">
             <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">2 przeciwległe kliny</h3><p className="mt-3 text-neutral-300">Około 19 kontaktów klinów z drewnem na minutę przy prędkości układu ok. 9,5 obr./min.</p></article>
             <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">PROMOTOR 3 kW / 400 V</h3><p className="mt-3 text-neutral-300">Trójfazowy napęd wybrany po testach do pracy przekładni pod obciążeniem.</p></article>
-            <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">Serwis w Polsce</h3><p className="mt-3 text-neutral-300">Polska gwarancja, dostęp do części oraz wsparcie techniczne POLMECH.TECH.</p></article>
+            <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">Serwis w Polsce</h3><p className="mt-3 text-neutral-300">Polska gwarancja, dostęp do części oraz wsparcie techniczne <BrandName />.</p></article>
           </div>
         </div>
       </section>
 
       <section className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-black">Aktualne łuparki i moduły POLMECH.TECH</h2>
+          <h2 className="text-3xl font-black">Aktualne łuparki i moduły <BrandName /></h2>
           <div className="mt-6 grid gap-4">
             {products.map((product) => (
               <a key={product.id} href={getOfferPath(product)} className="rounded-2xl border border-[#65df68]/15 bg-[#0a1713] p-5 transition hover:border-[#65df68]">
                 <h3 className="text-xl font-black">{product.name}</h3>
-                <p className="mt-2 text-neutral-400">Cena POLMECH.TECH: {getTrendEcoPrice(product)} {product.currency} · Dostępne: {product.stock} szt.</p>
+                <p className="mt-2 text-neutral-400">Cena <BrandName />: {getTrendEcoPrice(product)} {product.currency} · Dostępne: {product.stock} szt.</p>
               </a>
             ))}
           </div>
@@ -99,11 +100,11 @@ export default async function CategoryPage() {
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]">Dla kogo powstała ta maszyna?</p>
           <h2 className="mt-3 text-3xl font-black sm:text-4xl">Gdy tania łuparka przestaje wystarczać</h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">
-            POLMECH.TECH nie powstał jako najtańsza łuparka do kilku prostych polan. To rozwiązanie dla użytkownika, który przygotowuje większą ilość drewna i regularnie spotyka sęki, rozwidlenia, tuję oraz nieregularne kawałki. Właśnie wtedy liczą się powtarzalny cykl, dwa kliny, możliwość kontrolowanego cofnięcia po zakleszczeniu oraz dostęp do części i serwisu.
+            <BrandName /> nie powstał jako najtańsza łuparka do kilku prostych polan. To rozwiązanie dla użytkownika, który przygotowuje większą ilość drewna i regularnie spotyka sęki, rozwidlenia, tuję oraz nieregularne kawałki. Właśnie wtedy liczą się powtarzalny cykl, dwa kliny, możliwość kontrolowanego cofnięcia po zakleszczeniu oraz dostęp do części i serwisu.
           </p>
           <div className="mt-9 grid gap-5 md:grid-cols-2">
             <article className="rounded-2xl border border-[#65df68]/20 bg-[#65df68]/5 p-6">
-              <h3 className="text-xl font-black">Warto rozważyć POLMECH.TECH, jeśli</h3>
+              <h3 className="text-xl font-black">Warto rozważyć <BrandName />, jeśli</h3>
               <p className="mt-3 leading-relaxed text-neutral-300">masz zasilanie 400 V, łupiesz drewno seryjnie, trafiasz na sęki i rozwidlenia, zależy Ci na mechanicznym napędzie przekładniowym oraz serwisie i częściach dostępnych w Polsce.</p>
             </article>
             <article className="rounded-2xl border border-white/10 bg-black/20 p-6">
@@ -116,9 +117,9 @@ export default async function CategoryPage() {
 
       <section className="border-t border-white/10 bg-[#0a1713] px-6 py-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-black">Najczęstsze pytania o łuparkę POLMECH.TECH</h2>
+          <h2 className="text-3xl font-black">Najczęstsze pytania o łuparkę <BrandName /></h2>
           <div className="mt-8 grid gap-4">
-            {faq.map((x) => <article key={x.q} className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">{x.q}</h3><p className="mt-3 leading-relaxed text-neutral-300">{x.a}</p></article>)}
+            {faq.map((x) => <article key={x.q} className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black"><BrandText text={x.q} /></h3><p className="mt-3 leading-relaxed text-neutral-300"><BrandText text={x.a} /></p></article>)}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="/poradnik/luparka-do-pniakow" className="rounded-lg border border-[#65df68]/40 bg-[#65df68]/10 px-5 py-3 font-bold">Pniaki, sęki i rozwidlenia</a>\n            <a href="/poradnik/luparka-do-drewna-sekatego" className="rounded-lg border border-white/20 px-5 py-3 font-bold">Drewno sękate</a>
@@ -131,7 +132,7 @@ export default async function CategoryPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-black">Łuparka przekładniowa a hydrauliczna</h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">
-            Łuparka hydrauliczna wykorzystuje pompę, olej i siłownik. Łuparka przekładniowa POLMECH.TECH wykorzystuje redukcję obrotów i cykliczny ruch klinów. To dwie różne zasady pracy — w POLMECH.TECH nacisk położono na prosty mechanizm i szybkie, seryjne przygotowanie drewna opałowego.
+            Łuparka hydrauliczna wykorzystuje pompę, olej i siłownik. Łuparka przekładniowa <BrandName /> wykorzystuje redukcję obrotów i cykliczny ruch klinów. To dwie różne zasady pracy — w <BrandName /> nacisk położono na prosty mechanizm i szybkie, seryjne przygotowanie drewna opałowego.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a href="/poradnik" className="rounded-lg border border-white/20 px-6 py-3 font-bold">Poradnik o łuparkach</a>
