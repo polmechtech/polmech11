@@ -54,7 +54,7 @@ export default async function AllegroOffersSection() {
                     <p className="mt-1 text-3xl font-black text-[#65df68]">
                       {getTrendEcoPrice(product)} {product.currency}
                     </p>
-                    <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena PolMech.Tech</p>
+                    <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena POLMECH.TECH</p>
                     <p className="mt-2 text-sm text-neutral-300">
                       {product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź dostępność"}
                     </p>
