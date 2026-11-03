@@ -1,6 +1,6 @@
 import HoverZoomImage from "@/components/HoverZoomImage";
 import BrandText, { BrandName } from "@/components/BrandText";
-import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getAllegroDescriptionImages, getTrendEcoPrice } from "@/lib/allegroOffers";
+import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getAllegroDescriptionImages, getTrendEcoPrice, getDisplayProductName } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
   const products = await getGearboxOffers();
@@ -36,7 +36,7 @@ export default async function AllegroOffersSection() {
 
                   <div className="flex flex-1 flex-col p-6">
                     <a href={localUrl} className="text-xl font-black leading-snug transition hover:text-[#76e86f]">
-                      <BrandText text={product.name} />
+                      <BrandText text={getDisplayProductName(product.name)} />
                     </a>
                     {product.id === "19044041381" ? (
                       <div className="mt-3 space-y-2 text-sm leading-relaxed text-neutral-300">
