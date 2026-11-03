@@ -2,6 +2,8 @@ export type AllegroProduct = {
   id: string;
   name: string;
   image: string;
+  images?: Array<{ url: string; order: number }>;
+  descriptionSections?: Array<{ items?: Array<{ type?: string; url?: string; content?: string }> }>;
   price: string;
   currency: string;
   stock: number;
@@ -83,6 +85,15 @@ export function getDescriptionParagraphs(product: AllegroProduct) {
     .split(/\n{2,}/)
     .map((paragraph) => paragraph.replace(/\n/g, " ").replace(/\s+/g, " ").trim())
     .filter(Boolean);
+}
+
+export function getAllegroDescriptionImages(product: AllegroProduct): string[] {
+  const sections = Array.isArray(product.descriptionSections) ? product.descriptionSections : [];
+  const urls = sections.flatMap((section) => Array.isArray(section.items) ? section.items : [])
+    .filter((item) => item.type === "IMAGE" && typeof item.url === "string")
+    .map((item) => item.url!.trim())
+    .filter((url) => /^https:\/\//i.test(url) && url !== product.image);
+  return [...new Set(urls)].slice(0, 4);
 }
 
 export function getTrendEcoPrice(product: Pick<AllegroProduct, "price">) {
