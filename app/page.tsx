@@ -67,6 +67,25 @@ export default function Page() {
         </div>
       </section>
 
+      <section id="dobor-mocy" className="border-b border-white/10 bg-[#101d18] px-6 py-16 text-white">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-sm font-black uppercase tracking-[.18em] text-[#65df68]">Dobór silnika do reduktora JZQ250</p>
+          <h2 className="mt-3 max-w-5xl text-3xl font-black leading-tight sm:text-5xl">Więcej kilowatów nie oznacza lepszej łuparki</h2>
+          <div className="mt-7 grid gap-6 lg:grid-cols-2">
+            <div className="space-y-4 text-lg leading-8 text-neutral-300">
+              <p>W konstrukcji łuparki POLMECH.TECH przełożenie i układ pasowy zostały dobrane do silnika 3 kW / 400 V. Przy samodzielnej budowie na bazie tego rozwiązania rekomendujemy napęd do 4 kW. Mocniejszy silnik nie przyspieszy mechanizmu, jeżeli jego prędkość obrotowa i przełożenie pozostaną takie same; zwiększy natomiast dostępną rezerwę momentu, którą trzeba bezpiecznie przenieść przez pasy, wały i koła zębate.</p>
+              <p>Przy normalnym rozłupywaniu włókna drewna stopniowo ustępują, przez co obciążenie może narastać i opadać w trakcie ruchu klina. Gdy pod klin trafi nieodkształcalny przedmiot — na przykład metalowy łom — nastąpi gwałtowne zablokowanie mechanizmu. Taki udar może wytworzyć chwilowe obciążenia znacznie wyższe od momentu roboczego i uszkodzić zęby przekładni, wały lub inne elementy.</p>
+            </div>
+            <div className="rounded-3xl border border-amber-300/25 bg-amber-200/10 p-7">
+              <h3 className="text-2xl font-black text-amber-200">Dlaczego nie zalecamy przewymiarowania napędu?</h3>
+              <p className="mt-4 leading-8 text-neutral-200">Silnik o mocy powyżej 4 kW można technicznie rozważać w indywidualnym projekcie, lecz samo zwiększenie mocy nie poprawia geometrii ani przełożenia reduktora. Może podnieść koszt i pobór energii przy cięższym obciążeniu oraz zwiększyć energię i moment dostępne w sytuacji zakleszczenia. Ryzyko uszkodzenia przekładni rośnie szczególnie wtedy, gdy brakuje właściwie dobranego ograniczenia momentu.</p>
+              <p className="mt-4 leading-8 text-neutral-200">Ochronę należy oprzeć na obliczeniu obciążeń, doborze silnika, nastaw zabezpieczeń i — gdy wymaga tego projekt — sprzęgle przeciążeniowym lub innym skutecznym ograniczniku momentu. Sam silnik 3–4 kW ani zwykły przełącznik START/STOP nie zapewniają ochrony przed mechanicznym udarem.</p>
+              <p className="mt-5 font-bold text-[#9aee96]">Rekomendacja POLMECH.TECH dla tej konstrukcji: 3 kW w gotowej maszynie; maksymalnie 4 kW jako rozważany wariant do samodzielnego projektu po weryfikacji całego napędu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="technologia" className="bg-[#f4f6f4] px-6 py-20 text-[#0c1713]">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.15fr]">
           <div>
