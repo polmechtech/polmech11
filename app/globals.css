@@ -24,3 +24,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* The enlarged image follows the thumbnail hover; it never intercepts the pointer. */
+.hover-zoom-preview {
+  display: none;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-zoom-frame:hover > .hover-zoom-preview {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 2vw;
+    background: rgba(0, 0, 0, 0.94);
+    pointer-events: none;
+  }
+}
