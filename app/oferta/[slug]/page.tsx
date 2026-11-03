@@ -183,8 +183,8 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           <div>
             <h3 className="font-black">Producent / marka</h3>
-            <p className="mt-1 font-semibold">POLMECH.TECH</p>
-            <p className="mt-1 text-neutral-300">Łuparki przekładniowe rozwijane i kompletowane w Polsce.</p>
+            <p className="mt-1 font-semibold">{product.id === "19044041381" ? "Wyłącznik elektromagnetyczny 400 V — marka wg oferty" : "POLMECH.TECH"}</p>
+            <p className="mt-1 text-neutral-300">{product.id === "19044041381" ? "To akcesorium do budowy i sterowania maszynami, nie gotowa łuparka POLMECH.TECH." : "Łuparki przekładniowe rozwijane i kompletowane w Polsce."}</p>
           </div>
           <div>
             <h3 className="font-black">Podmiot odpowiedzialny w UE</h3>
@@ -198,7 +198,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         </div>
         <div className="mt-7 border-t border-white/10 pt-6">
           <h3 className="font-black">Informacje dotyczące bezpieczeństwa</h3>
-          <p className="mt-2 whitespace-pre-line text-neutral-300">Przed użyciem należy przeczytać instrukcję obsługi, sprawdzić osłony i zabezpieczenia oraz stosować wymagane środki ochrony indywidualnej. Nie wolno modyfikować konstrukcji ani omijać zabezpieczeń. Produkt służy wyłącznie do mechanicznego łupania drewna opałowego.</p>
+          <p className="mt-2 whitespace-pre-line text-neutral-300">{product.id === "19044041381" ? "Montaż elektryczny wyłącznie przez osobę z odpowiednimi kwalifikacjami. Sprawdź prąd silnika, kategorię pracy styków, ochronę przeciążeniową oraz funkcje bezpieczeństwa całej maszyny. Przed zmianą kierunku odczekaj do zatrzymania silnika. Wyłącznik nie jest kompletnym układem bezpieczeństwa łuparki." : "Przed użyciem należy przeczytać instrukcję obsługi, sprawdzić osłony i zabezpieczenia oraz stosować wymagane środki ochrony indywidualnej. Nie wolno modyfikować konstrukcji ani omijać zabezpieczeń. Produkt służy wyłącznie do mechanicznego łupania drewna opałowego."}</p>
         </div>
       </section>
     </main>
