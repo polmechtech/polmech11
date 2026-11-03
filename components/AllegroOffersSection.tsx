@@ -1,6 +1,5 @@
-import HoverZoomImage from "@/components/HoverZoomImage";
 import BrandText, { BrandName } from "@/components/BrandText";
-import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getAllegroDescriptionImages, getTrendEcoPrice, getDisplayProductName } from "@/lib/allegroOffers";
+import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice, getDisplayProductName } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
   const products = await getGearboxOffers();
@@ -21,14 +20,13 @@ export default async function AllegroOffersSection() {
           {products.map((product) => {
             const localUrl = `https://polmech.tech${getOfferPath(product)}`;
             const codUrl = getCashOnDeliveryWhatsAppLink(product);
-            const descriptionImages = getAllegroDescriptionImages(product);
 
             return (
               <article key={product.id} className="flex overflow-hidden rounded-3xl border border-[#65df68]/15 bg-[#0b1a15] shadow-2xl shadow-black/30">
                 <div className="flex w-full flex-col">
                   <div className="flex min-h-64 items-center justify-center bg-white p-4">
                     {product.image ? (
-                      <HoverZoomImage src={product.image} alt={product.name} imageClassName="max-h-64 w-full object-contain" />
+                      <a href={localUrl} aria-label={`Zobacz produkt: ${product.name}`} className="flex w-full items-center justify-center"><img src={product.image} alt={product.name} loading="lazy" className="max-h-64 w-full object-contain" /></a>
                     ) : (
                       <span className="text-neutral-500">Brak zdjęcia</span>
                     )}
@@ -48,15 +46,6 @@ export default async function AllegroOffersSection() {
                       <div className="mt-3 line-clamp-3 space-y-2 text-sm leading-relaxed text-neutral-400">
                         {getDescriptionParagraphs(product).slice(0, 2).map((paragraph, index) => (
                           <p key={index}><BrandText text={paragraph} /></p>
-                        ))}
-                      </div>
-                    )}
-                    {descriptionImages.length > 0 && (
-                      <div className="mt-4 grid grid-cols-2 gap-2" aria-label="Zdjęcia z opisu oferty Allegro">
-                        {descriptionImages.map((url, index) => (
-                          <div key={url} className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl bg-white p-2">
-                            <HoverZoomImage src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} />
-                          </div>
                         ))}
                       </div>
                     )}
