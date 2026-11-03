@@ -1,3 +1,4 @@
+import { BrandName } from "@/components/BrandText";
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import {
@@ -121,11 +122,11 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         </div>
         <div>
           <a href="/#oferty" className="text-sm font-semibold text-neutral-400 hover:text-white">← Wróć do ofert</a>
-          <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]">POLMECH.TECH • polski producent łuparek przekładniowych</p>
+          <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]"><BrandName /> • polski producent łuparek przekładniowych</p>
           <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">{product.name}</h1>
           <p className="mt-6 text-sm text-neutral-500 line-through">Allegro: {product.price} {product.currency}</p>
           <p className="mt-1 text-4xl font-black text-[#65df68]">{getTrendEcoPrice(product)} {product.currency}</p>
-          <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena POLMECH.TECH</p>
+          <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena <BrandName /></p>
           <p className="mt-3 text-neutral-300">{product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź aktualną dostępność"}</p>
           <div className="mt-8 grid gap-3">
             <a href={codUrl} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-[#65df68] text-[#07100d] px-6 py-4 text-center text-lg font-black transition hover:bg-[#76e86f]">Zamów za pobraniem z darmową dostawą</a>
@@ -136,7 +137,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
       {product.id === "18788891328" ? (
         <section className="mx-auto mt-8 max-w-6xl space-y-6">
           <div className="rounded-[2rem] border border-[#65df68]/15 bg-[#0b1a15] p-6 md:p-10">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#65df68]">POLMECH.TECH • 400 V • 3 kW</p>
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-[#65df68]"><BrandName /> • 400 V • 3 kW</p>
             <h2 className="mt-3 text-3xl font-black">Polska łuparka przekładniowa do dużych polan i drobnej rozpałki</h2>
             <p className="mt-5 max-w-4xl text-lg leading-8 text-neutral-300">Maszynę opracowaliśmy w Polsce z myślą o szybkim przygotowaniu drewna opałowego. Dwa przeciwległe kliny pozwalają sprawnie dzielić duże polano na kolejne, coraz mniejsze szczapy. Mechaniczne rozłupywanie pozostawia postrzępione, otwarte włókna, dzięki czemu drobne kawałki łatwo chwytają płomień i dobrze sprawdzają się jako rozpałka.</p>
           </div>
@@ -165,7 +166,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           <p className="text-sm font-black uppercase tracking-widest text-amber-300">Dla samodzielnych konstruktorów</p>
           <h2 className="mt-3 text-3xl font-black">Tanie, proste sterowanie 400 V — nie pełna szafa sterownicza łuparki</h2>
           <p className="mt-4 leading-8 text-neutral-200">Wyłącznik elektromagnetyczny z funkcją lewo / zero / prawo oraz START/STOP może być ekonomiczną alternatywą w samodzielnie budowanych urządzeniach, np. przy zakupie osobnego reduktora JZQ250 lub modułu mechanicznego. Pozwala uprościć projekt sterowania napędem, jeśli jego parametry są odpowiednie dla zastosowanego silnika.</p>
-          <p className="mt-4 font-bold leading-8 text-amber-200">Uwaga: nie jest to pełnowartościowy zamiennik fabrycznego panelu sterowania gotowej łuparki POLMECH.TECH. Nie zapewnia sam z siebie wszystkich funkcji bezpieczeństwa maszyny, w tym dedykowanego zatrzymania awaryjnego i kontrolowanego cofania klina.</p>
+          <p className="mt-4 font-bold leading-8 text-amber-200">Uwaga: nie jest to pełnowartościowy zamiennik fabrycznego panelu sterowania gotowej łuparki <BrandName />. Nie zapewnia sam z siebie wszystkich funkcji bezpieczeństwa maszyny, w tym dedykowanego zatrzymania awaryjnego i kontrolowanego cofania klina.</p>
           <p className="mt-4 leading-8 text-neutral-300">Przed użyciem trzeba zweryfikować prąd znamionowy silnika i kategorię pracy styków (w opisie wyłącznika AC-3: 12 A, Ith: 16 A), zabezpieczenia nadprądowe i przeciążeniowe, ryzyko nieoczekiwanego ruchu oraz zgodność całej instalacji. Projekt i podłączenie należy powierzyć osobie o odpowiednich kwalifikacjach. Kierunek obrotów zmieniaj wyłącznie po całkowitym zatrzymaniu napędu.</p>
         </section>
       )}
@@ -173,7 +174,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-[#65df68]/25 bg-[#0b1a15] p-6 md:p-10">
           <h2 className="text-3xl font-black">Dobierz silnik i sterowanie do własnego projektu</h2>
           <p className="mt-4 leading-8 text-neutral-300">Kupując sam moduł mechaniczny lub reduktor JZQ250, możesz zapytać nas również o silnik trójfazowy 3 kW albo 4 kW / 400 V. Silniki sprzedajemy po indywidualnym potwierdzeniu dostępności i ceny przed zakupem.</p>
-          <p className="mt-4 leading-8 text-neutral-300">Do projektów własnych oferujemy także <a className="font-bold text-[#65df68] underline" href="https://trendeco.eu/oferta/wylacznik-elektromagnetyczny-400v-lewe-prawe-obroty-19044041381">ekonomiczny wyłącznik elektromagnetyczny 400 V z rewersem</a>. To prostsza opcja sterowania, a nie odpowiednik rozbudowanego panelu z zabezpieczeniami stosowanego w gotowej łuparce POLMECH.TECH. Wymaga oceny kompatybilności oraz projektu zabezpieczeń całej maszyny.</p>
+          <p className="mt-4 leading-8 text-neutral-300">Do projektów własnych oferujemy także <a className="font-bold text-[#65df68] underline" href="https://trendeco.eu/oferta/wylacznik-elektromagnetyczny-400v-lewe-prawe-obroty-19044041381">ekonomiczny wyłącznik elektromagnetyczny 400 V z rewersem</a>. To prostsza opcja sterowania, a nie odpowiednik rozbudowanego panelu z zabezpieczeniami stosowanego w gotowej łuparce <BrandName />. Wymaga oceny kompatybilności oraz projektu zabezpieczeń całej maszyny.</p>
           <div className="mt-5 rounded-2xl border border-amber-300/30 bg-amber-300/10 p-5">
             <h3 className="text-xl font-black text-amber-200">Dlaczego nie zalecamy silnika mocniejszego niż 4 kW?</h3>
             <p className="mt-3 leading-7 text-neutral-200">W tej konstrukcji reduktora i napędu pasowego optymalnym zakresem jest 3–4 kW / 400 V. Wyższa moc silnika nie gwarantuje proporcjonalnego wzrostu efektywnej siły rozłupywania drewna, ponieważ ograniczają ją przełożenie, geometria klina i nośność mechanizmu. Zwiększa natomiast możliwy moment przeciążenia i pobór energii przy wykorzystaniu dodatkowej mocy. Przy nagłym zablokowaniu klina przez bardzo twardy, praktycznie nieodkształcalny przedmiot (np. metalowy łom) powstaje udar, który może uszkodzić zęby przekładni. Drewno zwykle odkształca się i pęka stopniowo; metalowy przedmiot może zatrzymać mechanizm niemal natychmiast.</p>
