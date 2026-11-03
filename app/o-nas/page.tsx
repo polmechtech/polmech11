@@ -1,3 +1,4 @@
+import { BrandName } from "@/components/BrandText";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,10 +38,10 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
       <article className="mx-auto max-w-4xl rounded-3xl border border-[#65df68]/15 bg-[#07100d] p-8 shadow-2xl md:p-12">
         <a href="/" className="text-sm font-semibold text-neutral-400">← Strona główna</a>
-        <p className="mt-8 text-sm font-bold tracking-[0.2em] text-[#65df68]">POLMECH.TECH</p>
+        <p className="mt-8 text-sm font-bold tracking-[0.2em] text-[#65df68]"><BrandName /></p>
         <h1 className="mt-3 text-4xl font-black">O firmie i kontakt</h1>
-        <p className="mt-6 text-lg leading-8 text-neutral-300">POLMECH.TECH jest polską marką i producentem rozwijanym przez Ekogratis sp. z o.o. z Warszawy. <a href="https://trendeco.eu" className="font-bold underline underline-offset-4">TrendEco</a>, POLMECH.TECH i <a href="https://widia.tech" className="font-bold underline underline-offset-4">WIDIA.TECH</a> są powiązanymi markami tej samej polskiej firmy.</p>
-        <p className="mt-4 text-lg leading-8 text-neutral-300">POLMECH.TECH specjalizuje się w konstrukcjach bez klasycznego układu hydraulicznego, opartych na przekładni mechanicznej i napędzie pasowym. Konstrukcje są rozwijane i kompletowane w Polsce. Zapewniamy polską gwarancję, serwis pogwarancyjny oraz dostęp do części zamiennych.</p>
+        <p className="mt-6 text-lg leading-8 text-neutral-300"><BrandName /> jest polską marką i producentem rozwijanym przez Ekogratis sp. z o.o. z Warszawy. <a href="https://trendeco.eu" className="font-bold underline underline-offset-4">TrendEco</a>, <BrandName /> i <a href="https://widia.tech" className="font-bold underline underline-offset-4">WIDIA.TECH</a> są powiązanymi markami tej samej polskiej firmy.</p>
+        <p className="mt-4 text-lg leading-8 text-neutral-300"><BrandName /> specjalizuje się w konstrukcjach bez klasycznego układu hydraulicznego, opartych na przekładni mechanicznej i napędzie pasowym. Konstrukcje są rozwijane i kompletowane w Polsce. Zapewniamy polską gwarancję, serwis pogwarancyjny oraz dostęp do części zamiennych.</p>
         <p className="mt-4 text-lg leading-8 text-neutral-300">Produkty można kupować bezpośrednio na oficjalnych stronach marek: polmech.tech, trendeco.eu i widia.tech, zgodnie z opcjami zakupu widocznymi na danej karcie produktu.</p>
         <h2 className="mt-10 text-2xl font-black">Kontakt</h2>
         <p className="mt-4 leading-8 text-neutral-300">Ekogratis sp. z o.o.<br />Jagielska 25/27, 02-886 Warszawa<br />tel. +48 512 077 770<br />e-mail: polmech.tech@gmail.com</p>
