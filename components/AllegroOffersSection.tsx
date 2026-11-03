@@ -26,13 +26,13 @@ export default async function AllegroOffersSection() {
             return (
               <article key={product.id} className="flex overflow-hidden rounded-3xl border border-[#65df68]/15 bg-[#0b1a15] shadow-2xl shadow-black/30">
                 <div className="flex w-full flex-col">
-                  <a href={localUrl} className="flex min-h-64 items-center justify-center bg-white p-4">
+                  <div className="flex min-h-64 items-center justify-center bg-white p-4">
                     {product.image ? (
                       <HoverZoomImage src={product.image} alt={product.name} imageClassName="max-h-64 w-full object-contain" />
                     ) : (
                       <span className="text-neutral-500">Brak zdjęcia</span>
                     )}
-                  </a>
+                  </div>
 
                   <div className="flex flex-1 flex-col p-6">
                     <a href={localUrl} className="text-xl font-black leading-snug transition hover:text-[#76e86f]">
@@ -54,9 +54,9 @@ export default async function AllegroOffersSection() {
                     {descriptionImages.length > 0 && (
                       <div className="mt-4 grid grid-cols-2 gap-2" aria-label="Zdjęcia z opisu oferty Allegro">
                         {descriptionImages.map((url, index) => (
-                          <a key={url} href={localUrl} className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl bg-white p-2">
+                          <div key={url} className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl bg-white p-2">
                             <HoverZoomImage src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} />
-                          </a>
+                          </div>
                         ))}
                       </div>
                     )}
