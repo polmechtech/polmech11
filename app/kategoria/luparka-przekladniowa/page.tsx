@@ -4,14 +4,14 @@ import { getGearboxOffers, getOfferPath, getTrendEcoPrice } from "@/lib/allegroO
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Łuparka przekładniowa 400V 3kW do drewna | 2 kliny | PolMech",
-  description: "Łuparka przekładniowa PolMech 400V 3kW do drewna sękatego, rozwidleń i tui. 2 kliny, do Ø40 cm i 50 cm, 5–6 m³/h. Polska gwarancja, serwis i części.",
+  title: "Łuparka przekładniowa 400V 3kW do drewna | 2 kliny | POLMECH.TECH",
+  description: "Łuparka przekładniowa POLMECH.TECH 400V 3kW do drewna sękatego, rozwidleń i tui. 2 kliny, do Ø40 cm i 50 cm, 5–6 m³/h. Polska gwarancja, serwis i części.",
   alternates: { canonical: "/kategoria/luparka-przekladniowa" },
   openGraph: {
     type: "website",
     locale: "pl_PL",
     url: "https://polmech.tech/kategoria/luparka-przekladniowa",
-    title: "Łuparka przekładniowa do drewna 400V 3kW — PolMech",
+    title: "Łuparka przekładniowa do drewna 400V 3kW — POLMECH.TECH",
     description: "Mechaniczna łuparka z dwoma klinami do trudnego drewna. Bez klasycznego układu hydraulicznego.",
   },
 };
@@ -28,7 +28,7 @@ export default async function CategoryPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Łuparki przekładniowe do drewna PolMech",
+    name: "Łuparki przekładniowe do drewna POLMECH.TECH",
     url: "https://polmech.tech/kategoria/luparka-przekladniowa",
     description: "Łuparki przekładniowe 400V do drewna opałowego, sękatego i rozwidleń.",
     mainEntity: {
@@ -66,24 +66,24 @@ export default async function CategoryPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-black sm:text-4xl">Dlaczego łuparka przekładniowa?</h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">
-            Przy prostych polanach wybór maszyny jest szeroki. Konstrukcja PolMech jest kierowana do użytkowników, którzy regularnie trafiają na drewno nieregularne, sękate i rozwidlone. Mechaniczny układ wykonuje powtarzalny cykl bez klasycznego układu hydraulicznego.
+            Przy prostych polanach wybór maszyny jest szeroki. Konstrukcja POLMECH.TECH jest kierowana do użytkowników, którzy regularnie trafiają na drewno nieregularne, sękate i rozwidlone. Mechaniczny układ wykonuje powtarzalny cykl bez klasycznego układu hydraulicznego.
           </p>
           <div className="mt-9 grid gap-5 md:grid-cols-3">
             <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">2 przeciwległe kliny</h3><p className="mt-3 text-neutral-300">Około 19 kontaktów klinów z drewnem na minutę przy prędkości układu ok. 9,5 obr./min.</p></article>
             <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">PROMOTOR 3 kW / 400 V</h3><p className="mt-3 text-neutral-300">Trójfazowy napęd wybrany po testach do pracy przekładni pod obciążeniem.</p></article>
-            <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">Serwis w Polsce</h3><p className="mt-3 text-neutral-300">Polska gwarancja, dostęp do części oraz wsparcie techniczne PolMech.</p></article>
+            <article className="rounded-2xl border border-white/10 bg-black/20 p-6"><h3 className="text-xl font-black">Serwis w Polsce</h3><p className="mt-3 text-neutral-300">Polska gwarancja, dostęp do części oraz wsparcie techniczne POLMECH.TECH.</p></article>
           </div>
         </div>
       </section>
 
       <section className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-black">Aktualne łuparki i moduły PolMech</h2>
+          <h2 className="text-3xl font-black">Aktualne łuparki i moduły POLMECH.TECH</h2>
           <div className="mt-6 grid gap-4">
             {products.map((product) => (
               <a key={product.id} href={getOfferPath(product)} className="rounded-2xl border border-[#65df68]/15 bg-[#0a1713] p-5 transition hover:border-[#65df68]">
                 <h3 className="text-xl font-black">{product.name}</h3>
-                <p className="mt-2 text-neutral-400">Cena PolMech.Tech: {getTrendEcoPrice(product)} {product.currency} · Dostępne: {product.stock} szt.</p>
+                <p className="mt-2 text-neutral-400">Cena POLMECH.TECH: {getTrendEcoPrice(product)} {product.currency} · Dostępne: {product.stock} szt.</p>
               </a>
             ))}
           </div>
@@ -128,7 +128,7 @@ export default async function CategoryPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-black">Łuparka przekładniowa a hydrauliczna</h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-300">
-            Łuparka hydrauliczna wykorzystuje pompę, olej i siłownik. Łuparka przekładniowa PolMech wykorzystuje redukcję obrotów i cykliczny ruch klinów. To dwie różne zasady pracy — w PolMech nacisk położono na prosty mechanizm i szybkie, seryjne przygotowanie drewna opałowego.
+            Łuparka hydrauliczna wykorzystuje pompę, olej i siłownik. Łuparka przekładniowa POLMECH.TECH wykorzystuje redukcję obrotów i cykliczny ruch klinów. To dwie różne zasady pracy — w POLMECH.TECH nacisk położono na prosty mechanizm i szybkie, seryjne przygotowanie drewna opałowego.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a href="/poradnik" className="rounded-lg border border-white/20 px-6 py-3 font-bold">Poradnik o łuparkach</a>
