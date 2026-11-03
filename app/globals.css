@@ -24,33 +24,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* Fullscreen preview appears only after a deliberate hover, avoiding flicker while moving between cards. */
-.hover-zoom-preview {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2vh 2vw;
-  background: rgba(0, 0, 0, 0.94);
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 180ms ease, visibility 0s linear 180ms;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .hover-zoom-frame:hover > .hover-zoom-preview {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 180ms ease 900ms, visibility 0s linear 900ms;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hover-zoom-preview {
-    transition: none;
-  }
-}
