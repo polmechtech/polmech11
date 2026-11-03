@@ -45,7 +45,7 @@ body {
   .hover-zoom-frame:hover > .hover-zoom-preview {
     opacity: 1;
     visibility: visible;
-    transition: opacity 180ms ease 380ms, visibility 0s linear 380ms;
+    transition: opacity 180ms ease 900ms, visibility 0s linear 900ms;
   }
 }
 
