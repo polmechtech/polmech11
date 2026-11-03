@@ -73,7 +73,7 @@ export default function Page() {
           <h2 className="mt-3 max-w-5xl text-3xl font-black leading-tight sm:text-5xl">Więcej kilowatów nie oznacza lepszej łuparki</h2>
           <div className="mt-7 grid gap-6 lg:grid-cols-2">
             <div className="space-y-4 text-lg leading-8 text-neutral-300">
-              <p>W konstrukcji łuparki POLMECH.TECH przełożenie i układ pasowy zostały dobrane do silnika 3 kW / 400 V. Przy samodzielnej budowie na bazie tego rozwiązania rekomendujemy napęd do 4 kW. Mocniejszy silnik nie przyspieszy mechanizmu, jeżeli jego prędkość obrotowa i przełożenie pozostaną takie same; zwiększy natomiast dostępną rezerwę momentu, którą trzeba bezpiecznie przenieść przez pasy, wały i koła zębate.</p>
+              <p>W konstrukcji łuparki POLMECH.TECH przełożenie i układ pasowy zostały dobrane do silnika 3 kW / 400 V. Przy samodzielnej budowie na bazie tego rozwiązania rekomendujemy napęd do 4 kW. Samo zwiększenie mocy silnika nie zapewni proporcjonalnie większej siły skutecznego rozłupywania drewna: ograniczeniem pozostają geometria klina, przełożenie i wytrzymałość napędu. Mocniejszy silnik zwiększy za to moment dostępny podczas przeciążenia, który muszą przenieść pasy, wały i koła zębate.</p>
               <p>Przy normalnym rozłupywaniu włókna drewna stopniowo ustępują, przez co obciążenie może narastać i opadać w trakcie ruchu klina. Gdy pod klin trafi nieodkształcalny przedmiot — na przykład metalowy łom — nastąpi gwałtowne zablokowanie mechanizmu. Taki udar może wytworzyć chwilowe obciążenia znacznie wyższe od momentu roboczego i uszkodzić zęby przekładni, wały lub inne elementy.</p>
             </div>
             <div className="rounded-3xl border border-amber-300/25 bg-amber-200/10 p-7">
