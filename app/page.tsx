@@ -24,7 +24,7 @@ export default function Page() {
           <header className="flex min-h-20 items-center justify-between gap-6 border-b border-white/10">
             <a href="/" className="text-2xl font-black tracking-tight text-white"><BrandName /><span className="block text-[10px] font-bold tracking-[.22em] text-neutral-400">MASZYNY DLA WYMAGAJĄCYCH</span></a>
             <nav className="hidden gap-7 text-sm font-semibold lg:flex">
-              <a className="text-[#76e86f]" href="/">Strona główna</a><a href="#luparki">Łuparki</a><a href="#technologia">Jak to działa</a><a href="#zalety">Zalety</a><a href={youtubeLink}>Galeria</a><a href="/o-nas">O nas</a>
+              <a className="text-[#76e86f]" href="/">Strona główna</a><a href="#luparki">Łuparki</a><a href="#technologia">Jak to działa</a><a href="#zalety">Zalety</a><a href={youtubeLink} target="_blank" rel="noopener noreferrer" aria-label="YouTube POLMECH.TECH" title="YouTube" className="inline-flex items-center justify-center"><svg viewBox="0 0 28 20" width="29" height="21" role="img" aria-hidden="true"><rect x="0" y="0" width="28" height="20" rx="5" fill="#FF0033" /><path d="M12 5.3 20 10l-8 4.7Z" fill="#fff" /></svg></a><a href="/o-nas">O nas</a>
             </nav>
             <a href={whatsappLink} className="rounded-lg bg-[#65df68] px-5 py-3 text-sm font-black text-[#07100d]">Zapytaj o ofertę</a>
           </header>
