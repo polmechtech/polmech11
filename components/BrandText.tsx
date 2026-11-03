@@ -3,7 +3,7 @@ import { Fragment } from "react";
 const BRAND = "POLMECH.TECH";
 
 export function BrandName() {
-  return <><span>POLMECH</span><span className="text-red-500">.TECH</span></>;
+  return <><span className="text-white">POLMECH</span><span className="text-red-500">.TECH</span></>;
 }
 
 export default function BrandText({ text }: { text: string }) {
