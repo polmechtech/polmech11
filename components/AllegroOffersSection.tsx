@@ -1,3 +1,4 @@
+import { BrandName } from "@/components/BrandText";
 import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
@@ -38,7 +39,7 @@ export default async function AllegroOffersSection() {
                     {product.id === "19044041381" ? (
                       <div className="mt-3 space-y-2 text-sm leading-relaxed text-neutral-300">
                         <p>Ekonomiczna alternatywa sterowania START/STOP i lewo/prawo dla własnych projektów z silnikiem trójfazowym 400 V, np. przy osobnym zakupie reduktora JZQ250 albo modułu łuparki.</p>
-                        <p className="font-bold text-amber-300">To nie jest pełny zamiennik rozbudowanego układu sterowania i zabezpieczeń gotowej łuparki POLMECH.TECH.</p>
+                        <p className="font-bold text-amber-300">To nie jest pełny zamiennik rozbudowanego układu sterowania i zabezpieczeń gotowej łuparki <BrandName />.</p>
                         <p>Dobór zabezpieczeń, dopuszczalnego prądu silnika i montaż wymaga weryfikacji przez osobę z odpowiednimi kwalifikacjami.</p>
                       </div>
                     ) : (
@@ -54,7 +55,7 @@ export default async function AllegroOffersSection() {
                     <p className="mt-1 text-3xl font-black text-[#65df68]">
                       {getTrendEcoPrice(product)} {product.currency}
                     </p>
-                    <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena POLMECH.TECH</p>
+                    <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena <BrandName /></p>
                     <p className="mt-2 text-sm text-neutral-300">
                       {product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź dostępność"}
                     </p>
