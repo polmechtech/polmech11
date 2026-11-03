@@ -13,7 +13,7 @@ export default async function AllegroOffersSection() {
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]">Aktualne oferty</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-            Łuparki i przekładnie dostępne od ręki
+            Łuparki, przekładnie, elementy napędu dostępne od ręki
           </h2>
         </div>
 
