@@ -1,3 +1,4 @@
+import HoverZoomImage from "@/components/HoverZoomImage";
 import BrandText, { BrandName } from "@/components/BrandText";
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -120,7 +121,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <div>
           <div className="flex min-h-80 items-center justify-center rounded-2xl bg-white p-5">
             {product.image ? (
-              <img src={product.image} alt={product.name} className="max-h-[560px] max-w-full object-contain" />
+              <HoverZoomImage src={product.image} alt={product.name} imageClassName="max-h-[560px] max-w-full object-contain" />
             ) : (
               <span className="text-neutral-500">Brak zdjęcia</span>
             )}
@@ -129,7 +130,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
             <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3" aria-label="Dodatkowe zdjęcia z opisu Allegro">
               {descriptionImages.map((url, index) => (
                 <div key={url} className="flex aspect-[4/3] items-center justify-center rounded-xl bg-white p-2">
-                  <img src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} loading="lazy" className="max-h-full max-w-full object-contain" />
+                  <HoverZoomImage src={url} alt={`${product.name} — zdjęcie z opisu ${index + 1}`} />
                 </div>
               ))}
             </div>
@@ -156,7 +157,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
             <h2 className="mt-3 text-3xl font-black">Polska łuparka przekładniowa do dużych polan i drobnej rozpałki</h2>
             <p className="mt-5 max-w-4xl text-lg leading-8 text-neutral-300">Maszynę opracowaliśmy w Polsce z myślą o szybkim przygotowaniu drewna opałowego. Dwa przeciwległe kliny pozwalają sprawnie dzielić duże polano na kolejne, coraz mniejsze szczapy. Mechaniczne rozłupywanie pozostawia postrzępione, otwarte włókna, dzięki czemu drobne kawałki łatwo chwytają płomień i dobrze sprawdzają się jako rozpałka.</p>
           </div>
-          {product.image && <figure className="overflow-hidden rounded-[2rem] border border-[#65df68]/15 bg-white p-5"><img src={product.image} alt="Łuparka przekładniowa POLMECH.TECH 400 V 3 kW" loading="lazy" className="mx-auto max-h-[680px] w-full object-contain" /></figure>}
+          {product.image && <figure className="overflow-hidden rounded-[2rem] border border-[#65df68]/15 bg-white p-5"><HoverZoomImage src={product.image} alt="Łuparka przekładniowa POLMECH.TECH 400 V 3 kW" imageClassName="mx-auto max-h-[680px] w-full object-contain" /></figure>}
           <div className="grid gap-6 md:grid-cols-2">
             <section className="rounded-[2rem] border border-[#65df68]/15 bg-[#0b1a15] p-6 md:p-8"><h2 className="text-2xl font-black">🇵🇱 Silnik PROMOTOR 3 kW / 400 V</h2><p className="mt-4 leading-7 text-neutral-300">Napęd stanowi trójfazowy silnik polskiej marki PROMOTOR. Moc 3 kW i prędkość około 1430 obr./min dobrze współpracują z wolnoobrotową przekładnią zastosowaną w łuparce. Gotowa maszyna jest przeznaczona do zasilania trójfazowego 400 V.</p></section>
             <section className="rounded-[2rem] border border-[#65df68]/15 bg-[#0b1a15] p-6 md:p-8"><h2 className="text-2xl font-black">📋 Najważniejsze dane</h2><ul className="mt-4 space-y-2 leading-7 text-neutral-300"><li>• 3 kW / 400 V / 50 Hz</li><li>• silnik: ok. 1430 obr./min</li><li>• wał roboczy: ok. 9,5 obr./min</li><li>• 2 przeciwległe kliny</li><li>• ok. 19 kontaktów klina z drewnem/min</li><li>• praktyczna wydajność do ok. 5–6 m³/h*</li></ul></section>
