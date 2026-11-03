@@ -132,7 +132,11 @@ export async function getGearboxOffers(): Promise<AllegroProduct[]> {
     const data = (await response.json()) as AllegroProduct[];
     if (!Array.isArray(data)) return [];
 
-    return data.filter((product) => !EXCLUDED_OFFER_IDS.has(product.id) && isGearboxOffer(product) && product.stock > 0);
+    return data
+      .filter((product) => !EXCLUDED_OFFER_IDS.has(product.id) && isGearboxOffer(product) && product.stock > 0)
+      .map((product) => product.id === "18878600668"
+        ? { ...product, name: product.name.replace(/\\s+do\\s+łuparka\\s*$/i, "").replace(/\\s+do\\s+łuparki\\s*$/i, "").trim() + " do łuparki" }
+        : product);
   } catch {
     return [];
   }
