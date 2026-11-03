@@ -86,7 +86,7 @@ export default async function CategoryPage() {
           <div className="mt-6 grid gap-4">
             {products.map((product) => (
               <a key={product.id} href={getOfferPath(product)} className="rounded-2xl border border-[#65df68]/15 bg-[#0a1713] p-5 transition hover:border-[#65df68]">
-                <h3 className="text-xl font-black">{product.name}</h3>
+                <h3 className="text-xl font-black"><BrandText text={product.name} /></h3>
                 <p className="mt-2 text-neutral-400">Cena <BrandName />: {getTrendEcoPrice(product)} {product.currency} · Dostępne: {product.stock} szt.</p>
               </a>
             ))}
