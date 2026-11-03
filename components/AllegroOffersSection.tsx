@@ -1,4 +1,4 @@
-import { BrandName } from "@/components/BrandText";
+import BrandText, { BrandName } from "@/components/BrandText";
 import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
@@ -34,7 +34,7 @@ export default async function AllegroOffersSection() {
 
                   <div className="flex flex-1 flex-col p-6">
                     <a href={localUrl} className="text-xl font-black leading-snug transition hover:text-[#76e86f]">
-                      {product.name}
+                      <BrandText text={product.name} />
                     </a>
                     {product.id === "19044041381" ? (
                       <div className="mt-3 space-y-2 text-sm leading-relaxed text-neutral-300">
@@ -45,7 +45,7 @@ export default async function AllegroOffersSection() {
                     ) : (
                       <div className="mt-3 line-clamp-3 space-y-2 text-sm leading-relaxed text-neutral-400">
                         {getDescriptionParagraphs(product).slice(0, 2).map((paragraph, index) => (
-                          <p key={index}>{paragraph}</p>
+                          <p key={index}><BrandText text={paragraph} /></p>
                         ))}
                       </div>
                     )}
