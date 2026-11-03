@@ -14,6 +14,7 @@ import {
   getProductDescription,
   getStructuredDataDescription,
   getTrendEcoPrice,
+  getDisplayProductName,
 } from "@/lib/allegroOffers";
 
 export const revalidate = 3600;
@@ -36,13 +37,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = getProductDescription(product);
 
   return {
-    title: product.name,
+    title: getDisplayProductName(product.name),
     description,
     alternates: { canonical: path },
     openGraph: {
       type: "website",
       url: path,
-      title: product.name,
+      title: getDisplayProductName(product.name),
       description,
       images: product.image ? [{ url: product.image, alt: product.name }] : [],
     },
@@ -64,7 +65,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: product.name,
+    name: getDisplayProductName(product.name),
     description: getStructuredDataDescription(product),
     image: product.image ? [product.image] : undefined,
     sku: product.id,
@@ -139,7 +140,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <div>
           <a href="/#oferty" className="text-sm font-semibold text-neutral-400 hover:text-white">← Wróć do ofert</a>
           <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]"><BrandName /> • polski producent łuparek przekładniowych</p>
-          <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl"><BrandText text={product.name} /></h1>
+          <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl"><BrandText text={getDisplayProductName(product.name)} /></h1>
           <p className="mt-6 text-sm text-neutral-500 line-through">Allegro: {product.price} {product.currency}</p>
           <p className="mt-1 text-4xl font-black text-[#65df68]">{getTrendEcoPrice(product)} {product.currency}</p>
           <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena <BrandName /></p>
