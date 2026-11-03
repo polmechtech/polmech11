@@ -1,4 +1,4 @@
-import { BrandName } from "@/components/BrandText";
+import BrandText, { BrandName } from "@/components/BrandText";
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import {
@@ -123,7 +123,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <div>
           <a href="/#oferty" className="text-sm font-semibold text-neutral-400 hover:text-white">← Wróć do ofert</a>
           <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]"><BrandName /> • polski producent łuparek przekładniowych</p>
-          <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">{product.name}</h1>
+          <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl"><BrandText text={product.name} /></h1>
           <p className="mt-6 text-sm text-neutral-500 line-through">Allegro: {product.price} {product.currency}</p>
           <p className="mt-1 text-4xl font-black text-[#65df68]">{getTrendEcoPrice(product)} {product.currency}</p>
           <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena <BrandName /></p>
@@ -158,7 +158,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
       ) : (
         <section className="mx-auto mt-8 max-w-6xl rounded-3xl border border-[#65df68]/15 bg-[#0b1a15] p-6 md:p-10">
           <h2 className="text-2xl font-black">Opis produktu</h2>
-          <div className="mt-5 max-w-4xl space-y-5 text-lg leading-relaxed text-neutral-300">{getDescriptionParagraphs(product).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+          <div className="mt-5 max-w-4xl space-y-5 text-lg leading-relaxed text-neutral-300">{getDescriptionParagraphs(product).map((paragraph, index) => <p key={index}><BrandText text={paragraph} /></p>)}</div>
         </section>
       )}
       {product.id === "19044041381" && (
@@ -189,8 +189,8 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           <div>
             <h3 className="font-black">Producent / marka</h3>
-            <p className="mt-1 font-semibold">{product.id === "19044041381" ? "Wyłącznik elektromagnetyczny 400 V — marka wg oferty" : "POLMECH.TECH"}</p>
-            <p className="mt-1 text-neutral-300">{product.id === "19044041381" ? "To akcesorium do budowy i sterowania maszynami, nie gotowa łuparka POLMECH.TECH." : "Łuparki przekładniowe rozwijane i kompletowane w Polsce."}</p>
+            <p className="mt-1 font-semibold">{product.id === "19044041381" ? "Wyłącznik elektromagnetyczny 400 V — marka wg oferty" : <BrandName />}</p>
+            <p className="mt-1 text-neutral-300">{product.id === "19044041381" ? <BrandText text="To akcesorium do budowy i sterowania maszynami, nie gotowa łuparka POLMECH.TECH." /> : "Łuparki przekładniowe rozwijane i kompletowane w Polsce."}</p>
           </div>
           <div>
             <h3 className="font-black">Podmiot odpowiedzialny w UE</h3>
