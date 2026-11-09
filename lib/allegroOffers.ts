@@ -160,4 +160,7 @@ export async function getGearboxOfferById(id: string) {
   return products.find((product) => product.id === id) ?? null;
 }
 
-export function getCashOnDeliveryWhatsAppLink(product: Pick<AllegroProduct, "id" | "name">) {\n  const message = `Dzień dobry, interesuje mnie produkt: ${product.name} (nr oferty ${product.id}). Czy jest dostępny? Proszę o kontakt.`;\n  return `https://wa.me/48512077770?text=${encodeURIComponent(message)}`;\n}
+export function getCashOnDeliveryWhatsAppLink(product: Pick<AllegroProduct, "id" | "name">) {
+  const message = `Dzień dobry, interesuje mnie produkt: ${product.name} (nr oferty ${product.id}). Czy jest dostępny? Proszę o kontakt.`;
+  return `https://wa.me/48512077770?text=${encodeURIComponent(message)}`;
+}
