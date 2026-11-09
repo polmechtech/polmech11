@@ -141,7 +141,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           <a href="/#oferty" className="text-sm font-semibold text-neutral-400 hover:text-white">← Wróć do ofert</a>
           <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#65df68]"><BrandName /> • polski producent łuparek przekładniowych</p>
           <h1 className="mt-3 text-3xl font-black leading-tight sm:text-4xl"><BrandText text={getDisplayProductName(product.name)} /></h1>
-          <p className="mt-6 text-sm text-neutral-500 line-through">Allegro: {product.price} {product.currency}</p>
+          
           <p className="mt-1 text-4xl font-black text-[#65df68]">{getTrendEcoPrice(product)} {product.currency}</p>
           <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena <BrandName /></p>
           <p className="mt-3 text-neutral-300">{product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź aktualną dostępność"}</p>
