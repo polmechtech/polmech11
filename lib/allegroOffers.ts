@@ -129,11 +129,8 @@ export function getVisibleDescriptionParagraphs(product: AllegroProduct) {
 }
 
 export function getTrendEcoPrice(product: Pick<AllegroProduct, "price">) {
-  const price = Number.parseFloat(String(product.price).replace(",", "."));
-  if (!Number.isFinite(price)) return String(product.price);
-  const discounted = price * 0.95;
-  const roundedDownToNine = Math.floor((discounted + 1) / 10) * 10 - 1;
-  return Math.max(9, roundedDownToNine).toFixed(2);
+  // POLMECH.TECH displays the same gross price as its linked Allegro offer.
+  return String(product.price);
 }
 
 export async function getGearboxOffers(): Promise<AllegroProduct[]> {
