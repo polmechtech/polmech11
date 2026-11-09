@@ -49,9 +49,7 @@ export default async function AllegroOffersSection() {
                         ))}
                       </div>
                     )}
-                    <p className="mt-5 text-sm text-neutral-500 line-through">
-                      Allegro: {product.price} {product.currency}
-                    </p>
+                    
                     <p className="mt-1 text-3xl font-black text-[#65df68]">
                       {getTrendEcoPrice(product)} {product.currency}
                     </p>
