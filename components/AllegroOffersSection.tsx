@@ -1,3 +1,4 @@
+import OfferAddToCartButton from "@/components/OfferAddToCartButton";
 import BrandText, { BrandName } from "@/components/BrandText";
 import { getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice, getDisplayProductName } from "@/lib/allegroOffers";
 
@@ -64,6 +65,7 @@ export default async function AllegroOffersSection() {
                         <a href="tel:+48512077770" className="flex min-h-11 items-center justify-center rounded-xl bg-[#65df68] px-3 py-2 font-black text-[#07100d]">Zadzwoń: +48 512 077 770</a>
                         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center justify-center rounded-xl border border-[#65df68] px-3 py-2 font-black text-white">Napisz na WhatsApp</a>
                       </div>
+                      <OfferAddToCartButton product={{ id: product.id, name: product.name, price: getTrendEcoPrice(product), currency: product.currency, image: product.image, stock: product.stock }} />
                       <a
                         href={product.url}
                         target="_blank"
