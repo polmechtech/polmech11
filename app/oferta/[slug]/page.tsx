@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import {
   extractOfferId,
-  getCashOnDeliveryWhatsAppLink,
   getGearboxOfferById,
   getOfferPath,
   getDescriptionParagraphs,
@@ -59,7 +58,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
   if (`/oferta/${slug}` !== canonicalPath) permanentRedirect(canonicalPath);
 
   const description = getProductDescription(product);
-  const codUrl = getCashOnDeliveryWhatsAppLink(product);
+  const whatsappUrl = `https://wa.me/48512077770?text=${encodeURIComponent(`Dzień dobry, interesuje mnie produkt: ${product.name} (nr oferty ${product.id}). Czy jest dostępny? Proszę o kontakt.`)}`;
   const descriptionImages = getAllegroDescriptionImages(product);
 
   const productJsonLd = {
@@ -146,7 +145,11 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
           <p className="mt-1 text-sm font-bold text-[#9aee96]">Cena <BrandName /></p>
           <p className="mt-3 text-neutral-300">{product.stock > 0 ? `Dostępne: ${product.stock} szt.` : "Sprawdź aktualną dostępność"}</p>
           <div className="mt-8 grid gap-3">
-            <a href={codUrl} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-[#65df68] text-[#07100d] px-6 py-4 text-center text-lg font-black transition hover:bg-[#76e86f]">Zamów za pobraniem z darmową dostawą</a>
+            <div className="grid gap-2 rounded-xl border border-[#65df68]/30 bg-[#65df68]/10 p-3 text-center">
+              <p className="text-sm font-bold text-white">Masz pytania? Zadzwoń lub napisz — odpowiemy przed zakupem.</p>
+              <a href="tel:+48512077770" className="flex min-h-11 items-center justify-center rounded-xl bg-[#65df68] px-3 py-2 font-black text-[#07100d]">Zadzwoń: +48 512 077 770</a>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center justify-center rounded-xl border border-[#65df68] px-3 py-2 font-black text-white">Napisz na WhatsApp</a>
+            </div>
             <a href={product.url} target="_blank" rel="noopener noreferrer sponsored" className="rounded-2xl border border-white/20 px-6 py-4 text-center font-bold transition hover:bg-white/10">Kup na Allegro</a>
           </div>
         </div>
