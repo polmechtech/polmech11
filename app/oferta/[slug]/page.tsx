@@ -1,3 +1,4 @@
+import OfferAddToCartButton from "@/components/OfferAddToCartButton";
 import HoverZoomImage from "@/components/HoverZoomImage";
 import BrandText, { BrandName } from "@/components/BrandText";
 import type { Metadata } from "next";
@@ -150,6 +151,7 @@ export default async function OfferPage({ params }: { params: Promise<{ slug: st
               <a href="tel:+48512077770" className="flex min-h-11 items-center justify-center rounded-xl bg-[#65df68] px-3 py-2 font-black text-[#07100d]">Zadzwoń: +48 512 077 770</a>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center justify-center rounded-xl border border-[#65df68] px-3 py-2 font-black text-white">Napisz na WhatsApp</a>
             </div>
+            <OfferAddToCartButton product={{ id: product.id, name: product.name, price: getTrendEcoPrice(product), currency: product.currency, image: product.image, stock: product.stock }} />
             <a href={product.url} target="_blank" rel="noopener noreferrer sponsored" className="rounded-2xl border border-white/20 px-6 py-4 text-center font-bold transition hover:bg-white/10">Kup na Allegro</a>
           </div>
         </div>
