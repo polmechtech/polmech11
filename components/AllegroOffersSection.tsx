@@ -1,5 +1,5 @@
 import BrandText, { BrandName } from "@/components/BrandText";
-import { getCashOnDeliveryWhatsAppLink, getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice, getDisplayProductName } from "@/lib/allegroOffers";
+import { getGearboxOffers, getOfferPath, getDescriptionParagraphs, getTrendEcoPrice, getDisplayProductName } from "@/lib/allegroOffers";
 
 export default async function AllegroOffersSection() {
   const products = await getGearboxOffers();
@@ -19,7 +19,7 @@ export default async function AllegroOffersSection() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => {
             const localUrl = `https://polmech.tech${getOfferPath(product)}`;
-            const codUrl = getCashOnDeliveryWhatsAppLink(product);
+            const whatsappUrl = `https://wa.me/48512077770?text=${encodeURIComponent(`Dzień dobry, interesuje mnie produkt: ${product.name} (nr oferty ${product.id}). Czy jest dostępny? Proszę o kontakt.`)}`;
 
             return (
               <article key={product.id} className="flex overflow-hidden rounded-3xl border border-[#65df68]/15 bg-[#0b1a15] shadow-2xl shadow-black/30">
@@ -59,14 +59,11 @@ export default async function AllegroOffersSection() {
                     </p>
 
                     <div className="mt-6 grid gap-3">
-                      <a
-                        href={codUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-2xl bg-[#65df68] px-5 py-4 text-center font-black text-[#07100d] transition hover:bg-[#76e86f]"
-                      >
-                        Zamów za pobraniem z darmową dostawą
-                      </a>
+                      <div className="grid gap-2 rounded-xl border border-[#65df68]/30 bg-[#65df68]/10 p-3 text-center">
+                        <p className="text-sm font-bold text-white">Masz pytania? Zadzwoń lub napisz — odpowiemy przed zakupem.</p>
+                        <a href="tel:+48512077770" className="flex min-h-11 items-center justify-center rounded-xl bg-[#65df68] px-3 py-2 font-black text-[#07100d]">Zadzwoń: +48 512 077 770</a>
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center justify-center rounded-xl border border-[#65df68] px-3 py-2 font-black text-white">Napisz na WhatsApp</a>
+                      </div>
                       <a
                         href={product.url}
                         target="_blank"
